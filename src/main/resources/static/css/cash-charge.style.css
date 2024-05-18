@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
+:root {
+	/* Size */
+	--bn-size-type1: 340px;
+	--content-width: 1140px;
+
+	/* Border */
+	--container-boarder-radius: 10px;
+
+	/* color */
+	--bn-background-color: rgb(220, 222, 225, 0.35);
+	--container-box-shadow: 1px 2px 3px 1px rgb(203, 203, 203);
+
+	--btn-type1-bg-color: #fff;
+	--btn-type1-color: #000000;
+	--btn-type2-bg-color: #000000;
+	--btn-type2-color: #fff;
+}
+
+body {
+	width: 100dvw;
+	height: 100dvh;
+	margin: 0;
+}
+
+.header {
+	position: relative;
+	width: 100%;
+	height: 32px;
+	margin: 20px auto;
+	display: flex;
+	justify-content: center;
+}
+
+/* 공통 navbar */
+.navbar {
+	max-width: var(--content-width);
+	width: 90%;
+	height: 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar__menu-container {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.navbar__menu-container a {
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+
+.navbar__menu-container .icon-stadium-info {
+	margin: 0;
+	list-style: none;
+}
+
+.navbar__menu-container .icon-mypage {
+	width: 28px;
+	height: 28px;
+	margin: 0;
+	list-style: none;
+}
+
+/* 공통 content-container */
+.content-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content__main {
+	max-width: var(--content-width);
+	width: 90%;
+	height: 100%;
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.content__main__form {
+	width: 100%;
+	height: 100%;
+}
+
+.payment-method-container > .title,
+.payment-info-container > .title {
+	width: fit-content;
+	margin: 40px 0 20px;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.payment-method-container > .title > span,
+.payment-info-container .title > span {
+	border-bottom: 1.5px solid;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 22px;
+}
+
+.payment-info-container .content-container {
+	display: flex;
+	flex-direction: column;
+	border-radius: var(--container-boarder-radius);
+	box-shadow: var(--container-box-shadow);
+}
+
+.payment-info-container .content-container .wrapper {
+	width: 90%;
+	height: 90px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 17px;
+}
+
+.payment-info-container .content-container .wrapper input {
+	width: 250px;
+	height: 44px;
+	padding-right: 20px;
+	border-radius: 10px;
+	border: 1px solid #C5C5C5;
+	font-size: 24px ;
+	text-align: right;
+	letter-spacing: 3px;
+
+}
+
+.div-line {
+	width: 100%;
+	border-bottom: 1px solid #DCDCDC;
+}
+
+.payment-info-container .content-container .wrapper .current-cash {
+	font-size: 24px;
+	margin: 20px;
+	letter-spacing: 3px;
+}
+
+.payment-method-container {
+	width: 100%;
+}
+
+.payment-method-container .check-method {
+	display: flex;
+	align-items: center;
+	width: 100%;	
+	gap: 20px;
+}
+
+.payment-method-container .check-method > div {
+	position: relative;
+	width: 240px;
+	height: 60px;
+}
+
+.payment-method-container .check-method input[type="radio"] {
+	display: none;
+}
+
+.payment-method-container .check-method label {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #bdbcbf;
+	border-radius: 10px;
+	font-size: 17px;
+	color: #383838;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.check-method label:hover {
+	background-color: #737373;
+	color: white;
+}
+
+.payment-method-container .check-method input:checked+label {
+	/* background-color: #EFF1FF; */
+	background-color: black;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);	
+}
+
+.check-termsofuse-container {
+	margin-top: 40px;
+	color: #727171;
+}
+
+.check-termsofuse-container .wrapper {
+	margin: 15px 0;
+}
+
+.form__btn-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+	margin: 60px auto 20px;
+}
+
+.form__btn-container > button {
+	width: 330px;
+	height: 48px;
+	border-radius: 50px;
+	border: none;
+}
+
+.form__btn-container button {
+	cursor: pointer;
+}
+
+.form__btn-container > button:nth-child(1) {
+	background-color: var(--btn-type1-bg-color);
+	color: var(--btn-type1-color);
+	border: 1px solid var(--btn-type1-color);
+}
+
+.form__btn-container > button:nth-child(2) {
+	background-color: var(--btn-type2-bg-color);
+	color: var(--btn-type2-color);
+}

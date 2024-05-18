@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--위에는 mapper xml 기본문법 -->
+
+<mapper namespace="site.match5.domain.matchedUser.repository.MatchedUserMapper">
+
+    <insert id="saveMatchedUser" parameterType="MatchedUser">
+        insert into MATCHED_USERLIST (user_id, matching_history_id, team)
+        values (#{userId}, #{matchingHistoryId}, #{team})
+    </insert>
+
+    <select id="findMatchedUsers" resultType="MatchedUser">
+        select *
+        from MATCHED_USERLIST
+        where MATCHING_HISTORY_ID = #{matchingHistoryId}
+    </select>
+
+
+    <delete id="deleteMatchedUser">
+        delete from MATCHED_USERLIST where MATCHING_HISTORY_ID =#{matchingHistoryId}
+    </delete>
+
+    <select id="findMatchedUsersHTeam" resultMap="HomeTeamResultMap" >
+        select    mh.HTEAM_MANAGER_ID as HomeTeamManagerId,
+                  c.id                ,
+                  c.level_id        as  levelId ,
+                  c.age               ,
+                  c.nickname          ,
+                  c.image_url       as  imageUrl ,
+                  c.match_count as matchCount
+
+        from MATCHED_USERLIST mu
+                 join MATCH5_DBA.CLIENT c on mu.USER_ID = c.ID
+                 join MATCHING_HISTORY mh on mu.MATCHING_HISTORY_ID = mh.id
+        where mu.MATCHING_HISTORY_ID = #{matchingHistoryId} and mu.team = 'H'
+    </select>
+
+    <select id="findMatchedUsersATeam" resultMap="AwayTeamResultMap">
+        select  mh.ATEAM_MANAGER_ID as AwayTeamManagerId,
+                c.id                 ,
+                c.level_id         as  levelId ,
+                c.age               ,
+                c.nickname          ,
+                c.image_url       as  imageUrl  ,
+                c.match_count as matchCount
+
+        from MATCHED_USERLIST mu
+                 join MATCH5_DBA.CLIENT c on mu.USER_ID = c.ID
+                 join MATCHING_HISTORY mh on mu.MATCHING_HISTORY_ID = mh.id
+        where mu.MATCHING_HISTORY_ID = #{matchingHistoryId} and mu.team = 'A'
+    </select>
+    
+
+
+    <resultMap id="HomeTeamResultMap" type="HomeTeamInfo">
+        <id property="HomeTeamManagerId" column="HomeTeamManagerId"/>
+        <collection property="HomeTeamUsersInfo" ofType="MatchedUserInfo" >
+            <result column="id" property="id"/>
+            <result column="levelId" property="levelId"/>
+            <result column="age" property="age"/>
+            <result column="nickname" property="nickname"/>
+            <result column="imageUrl" property="imageUrl"/>
+            <result column="matchCount" property="matchCount"/>
+        </collection>
+    </resultMap>
+    <resultMap id="AwayTeamResultMap" type="AwayTeamInfo">
+        <id property="AwayTeamManagerId" column="AwayTeamManagerId"/>
+        <collection property="AwayTeamUsersInfo" ofType="MatchedUserInfo" >
+            <result column="id" property="id"/>
+            <result column="levelId" property="levelId"/>
+            <result column="age" property="age"/>
+            <result column="nickname" property="nickname"/>
+            <result column="imageUrl" property="imageUrl"/>
+            <result column="matchCount" property="matchCount"/>
+        </collection>
+    </resultMap>
+
+
+</mapper>

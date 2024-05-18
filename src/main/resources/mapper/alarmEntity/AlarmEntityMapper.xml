@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--위에는 mapper xml 기본문법 -->
+<mapper namespace="site.match5.domain.alarmEntity.repository.AlarmEntityMapper">
+
+    <insert id="saveAlarm" parameterType="Alarm">
+        insert into MATCHING_ALARM(user_id, content, matching_history_id, type)
+--           매칭완료 알림일 경우
+            <if test="type.equals('매칭완료')">
+                 VALUES (#{userId},'매칭이 완료되었습니다.',#{matchingHistoryId},#{type})
+            </if>
+--         매칭취소 알림일 경우
+            <if test="type.equals('매칭취소')">
+                VALUES (#{userId},'매칭이 취소되었습니다.',null,#{type})
+            </if>
+    </insert>
+
+    <delete id="deleteAlarm">
+        delete from MATCHING_ALARM
+        where MATCHING_HISTORY_ID = #{matchingHistoryId}
+    </delete>
+
+    <update id="updateAlarmRead" parameterType="int">
+        update MATCHING_ALARM set status =1
+        where id = #{alarmId}
+    </update>
+
+</mapper>

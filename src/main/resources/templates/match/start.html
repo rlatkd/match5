@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MATCH5</title>
+
+	<link rel="stylesheet" href="/css/start.style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
+	<script src="/js/match/start.js" defer></script>
+</head>
+
+<body>
+	<header class="header">
+		<nav class="navbar">
+			<a href="/">
+				<img src="/images/logo.png" alt="">
+			</a>
+			<div class="navbar__menu-container">
+				<a href="/stadium-list">
+					<img src="/images/icons/icon-stadium-info.svg" alt="" class="icon-stadium-info">
+				</a>
+				<a href="/mypage">
+					<img src="/images/icons/icon-mypage.svg" alt="" class="icon-mypage">
+				</a>
+			</div>
+		</nav>
+	</header>
+
+	<main class="main">
+		<section class="banner-container banner-container-type1">
+			<img src="/images/test-banner-img.png" alt="" class="banner">
+		</section>
+
+		<section class="content-container">
+			<div class="content__main">
+				<div name="startform" class="content__main__startform">
+					<div>
+						<div class="content__main__title"><span>Step1</span>&nbsp;일정 선택</div>
+						<div class="carousel-wrap">
+							<div class="owl-carousel owl-carousel-day">
+								<div class="item">
+									<div class = "carousel-weather-container">
+										<input type="radio" id="day-1" name="day">
+										<label for="day-1">
+											<div class="weather-label-container">
+												<div class="weather-label-left-container">
+													<p></p>
+													<p></p>
+													<p></p>
+												</div>
+
+												<div class="weather-label-right-container">
+													<img src="" alt="">
+												</div>
+											</div>
+										</label>
+									</div>
+								</div>
+								<div class="item">
+									<div class = "carousel-weather-container">
+										<input type="radio" id="day-2" name="day">
+										<label for="day-2">
+											<div class="weather-label-container">
+												<div class="weather-label-left-container">
+													<p></p>
+													<p></p>
+													<p></p>
+												</div>
+
+												<div class="weather-label-right-container">
+													<img src="" alt="">
+												</div>
+											</div>
+										</label>
+									</div>
+								</div>
+								<div class="item">
+									<div class = "carousel-weather-container">
+										<input type="radio" id="day-3" name="day">
+										<label for="day-3">
+											<div class="weather-label-container">
+												<div class="weather-label-left-container">
+													<p></p>
+													<p></p>
+													<p></p>
+												</div>
+
+												<div class="weather-label-right-container">
+													<img src="" alt="">
+												</div>
+											</div>
+										</label>
+									</div>
+								</div>
+								<div class="item">
+									<div class = "carousel-weather-container">
+										<input type="radio" id="day-4" name="day">
+										<label for="day-4">
+											<div class="weather-label-container">
+												<div class="weather-label-left-container">
+													<p></p>
+													<p></p>
+													<p></p>
+												</div>
+
+												<div class="weather-label-right-container">
+													<img src="" alt="">
+												</div>
+											</div>
+										</label>
+									</div>
+								</div>
+								<div class="item">
+									<div class = "carousel-weather-container">
+										<input type="radio" id="day-5" name="day">
+										<label for="day-5">
+											<div class="weather-label-container">
+												<div class="weather-label-left-container">
+													<p></p>
+													<p></p>
+													<p></p>
+												</div>
+
+												<div class="weather-label-right-container">
+													<img src="" alt="">
+												</div>
+											</div>
+										</label>
+									</div>
+								</div>
+								<div class="item">
+									<div class = "carousel-weather-container">
+										<input type="radio" id="day-6" name="day">
+										<label for="day-6">
+											<div class="weather-label-container">
+												<div class="weather-label-left-container">
+													<p></p>
+													<p></p>
+													<p></p>
+												</div>
+
+												<div class="weather-label-right-container">
+													<img src="" alt="">
+												</div>
+											</div>
+										</label>
+									</div>
+								</div>
+								<div class="item">
+									<div class = "carousel-weather-container">
+										<input type="radio" id="day-7" name="day">
+										<label for="day-7">
+											<div class="weather-label-container">
+												<div class="weather-label-left-container">
+													<p></p>
+													<p></p>
+													<p></p>
+												</div>
+
+												<div class="weather-label-right-container">
+													<img src="" alt="">
+												</div>
+											</div>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<div class="content__main__title"><span>Step2</span>&nbsp;시간 선택</div>
+						<div class="carousel-wrap">
+							<div class="owl-carousel owl-carousel-time">
+								<div class="item">
+									<p>
+										<input type="radio" id="time-1" name="slot">
+										<label for="time-1">00:00 - 02:00</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="time-2" name="slot">
+										<label for="time-2">02:00 - 04:00</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="time-3" name="slot">
+										<label for="time-3">04:00 - 06:00</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="time-4" name="slot">
+										<label for="time-4">06:00 - 08:00</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="time-5" name="slot">
+										<label for="time-5">08:00 - 10:00</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="time-6" name="slot">
+										<label for="time-6">10:00 - 12:00</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="time-7" name="slot">
+										<label for="time-7">12:00 - 14:00</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="time-8" name="slot">
+										<label for="time-8">14:00 - 16:00</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="time-9" name="slot">
+										<label for="time-9">16:00 - 18:00</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="time-10" name="slot">
+										<label for="time-10">18:00 - 20:00</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="time-11" name="slot">
+										<label for="time-11">20:00 - 22:00</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="time-12" name="slot">
+										<label for="time-12">22:00 - 24:00</label>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<div class="content__main__title"><span>Step3</span>&nbsp;지역 선택</div>
+						<div class="carousel-wrap">
+							<div class="owl-carousel owl-carousel-loc">
+								<div class="item">
+									<p>
+										<input type="radio" id="loc-1" name="location">
+										<label for="loc-1">송파구</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="loc-2" name="location">
+										<label for="loc-2">영등포구</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="loc-3" name="location">
+										<label for="loc-3">은평구</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="loc-4" name="location">
+										<label for="loc-4">강동구</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="loc-5" name="location">
+										<label for="loc-5">노원구</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="loc-6" name="location">
+										<label for="loc-6">도봉구</label>
+									</p>
+								</div>
+								<div class="item">
+									<p>
+										<input type="radio" id="loc-7" name="location">
+										<label for="loc-7">양천구</label>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<div class="content__main__title"><span>Step4</span>&nbsp;추가 조건 선택</div>
+						<div class="other-condition-wrap">
+							<div class="other-condition-container">
+								<p class="other-condition-ontainer-title">실내외 여부</p>
+
+								<div class="other-condition-btn-container">
+									<div class="item">
+										<p>
+											<input type="radio" id="indooronnot-1" value="2" name="indooronnot">
+											<label for="indooronnot-1">미선택</label>
+										</p>
+									</div>
+									<div class="item">
+										<p>
+											<input type="radio" id="indooronnot-2" value="0" name="indooronnot">
+											<label for="indooronnot-2">실내</label>
+										</p>
+									</div>
+									<div class="item">
+										<p>
+											<input type="radio" id="indooronnot-3" value="1" name="indooronnot">
+											<label for="indooronnot-3">실외</label>
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="other-condition-container">
+								<p class="other-condition-ontainer-title">매니저 여부</p>
+
+								<div class="other-condition-btn-container">
+									<div class="item">
+										<p>
+											<input type="radio" id="managerselect-1" value="0" name="managerselect">
+											<label for="managerselect-1">미선택</label>
+										</p>
+									</div>
+									<div class="item">
+										<p>
+											<input type="radio" id="managerselect-2" value="1" name="managerselect">
+											<label for="managerselect-2">선택</label>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="startform__submit-container">
+						<button type="button" id="start-matching">매칭 시작하기</button><br>
+					</div>
+				</div>
+
+			</div>
+		</section>
+	</main>
+
+	<!-- 모든 조건 선택 시 -->
+	<dialog class="info-confirm-dialog dialog-type2">
+		<div class="dialog-content-container">
+			<div class="dialog-content-message">
+				<div class="dialogo-content-select-codition">
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+				</div>
+				<p>다음 조건으로 매칭을 시작합니다.</p>
+			</div>
+		</div>
+		<div class="dialog-button-container">
+			<button class="info-confirm-Close">취소</button>
+			<button>확인</button>
+		</div>
+	</dialog>
+
+	<!-- 조건 미 선택 시 -->
+	<dialog class="info-error-dialog dialog-type1">
+		<div class="dialog-content-container">
+			<div class="dialog-content-message">
+				<svg fill="#fe3e3e" viewBox="0 0 36 36" version="1.1" preserveAspectRatio="xMidYMid meet"
+					 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+					<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+					<g id="SVGRepo_iconCarrier">
+						<title>error-standard-line</title>
+						<circle class="clr-i-outline clr-i-outline-path-1" cx="18" cy="26.06" r="1.33"></circle>
+						<path class="clr-i-outline clr-i-outline-path-2"
+							  d="M18,22.61a1,1,0,0,1-1-1v-12a1,1,0,1,1,2,0v12A1,1,0,0,1,18,22.61Z"></path>
+						<path class="clr-i-outline clr-i-outline-path-3"
+							  d="M18,34A16,16,0,1,1,34,18,16,16,0,0,1,18,34ZM18,4A14,14,0,1,0,32,18,14,14,0,0,0,18,4Z">
+						</path>
+						<rect x="0" y="0" width="36" height="36" fill-opacity="0"></rect>
+					</g>
+				</svg>
+				<p>매칭 조건을 모두 선택해주세요.</p>
+			</div>
+		</div>
+		<div class="dialog-button-container">
+			<button class="info-error-Close">확인</button>
+		</div>
+	</dialog>
+</body>
+
+</html>

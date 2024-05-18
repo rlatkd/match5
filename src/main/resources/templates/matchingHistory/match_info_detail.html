@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATCH5</title>
+    <link rel="stylesheet" href="/css/match_info_detail.style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <!----------- 알림을 위한 공통 태그 START ----------->
+    <link rel="stylesheet" type="text/css" href="/css/notification.css"> <!-- 알림 CSS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script><!-- 알림 JS -->
+    <script src="/js/alarm.js" defer></script><!-- 알림 JS -->
+    <script src="/js/notification-modal.js" defer></script><!-- 알림 JS -->
+    <!----------- 알람을 위한 공통 태그 END ----------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
+    <script src="/js/match/match_info_detail.js" defer></script>
+</head>
+
+<body>
+<header class="header">
+    <nav class="navbar">
+        <a href="/">
+            <img src="/images/logo.png" alt="">
+        </a>
+        <div class="navbar__menu-container">
+            <a href="/stadium-list">
+                <img src="/images/icons/icon-stadium-info.svg" alt="" class="icon-stadium-info">
+            </a>
+            <a href="/mypage">
+                <img src="/images/icons/icon-mypage.svg" alt="" class="icon-mypage">
+            </a>
+        </div>
+    </nav>
+</header>
+
+<main class="matchgameinfo">
+    <section class="banner-container banner-container-type1">
+        <div class="carousel-wrap">
+            <div class="owl-carousel owl-carousel-banner">
+                <!--				<div class="item">-->
+                <!--					<img src="/images/test-banner-img.png" alt="" class="banner">-->
+                <!--				</div>-->
+            </div>
+        </div>
+    </section>
+
+    <section class="content-container">
+        <div class="content__main">
+            <div class="content__main__left">
+                <div class="match-team-container">
+                    <div class="match-team-title">
+                        <p>HOME</p>
+                    </div>
+                    <div class="match-user-info">
+                        <div class="match-userinfo-card home">
+                            <div class="additional">
+                                <div class="user-card">
+                                    <div class="matchgameinfo__userprofile">
+                                        <img src="" alt="">
+                                    </div>
+                                </div>
+                                <div class="more-info">
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="more-info-title">PLATINUM</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>19</p>
+                                        </div>
+                                        <div class="more-info-title">경기수</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>29</p>
+                                        </div>
+                                        <div class="more-info-title">나이</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="general">
+                                <div class="container">
+                                    <img src="" alt="">
+                                    <p>한강위에고양이어떡해</p>
+                                </div>
+
+                                <img class="manager" src="/images/utils/manager.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="match-user-info">
+                        <div class="match-userinfo-card home">
+                            <div class="additional">
+                                <div class="user-card">
+                                    <div class="matchgameinfo__userprofile">
+                                        <img src="" alt="">
+                                    </div>
+                                </div>
+                                <div class="more-info">
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="more-info-title">PLATINUM</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>20</p>
+                                        </div>
+                                        <div class="more-info-title">경기수</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>24</p>
+                                        </div>
+                                        <div class="more-info-title">나이</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="general">
+                                <div class="container">
+                                    <img src="" alt="">
+                                    <p>발흥민</p>
+                                </div>
+
+                                <img class="manager" src="/images/utils/manager.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="match-user-info">
+                        <div class="match-userinfo-card home">
+                            <div class="additional">
+                                <div class="user-card">
+                                    <div class="matchgameinfo__userprofile">
+                                        <img src="" alt="">
+                                    </div>
+                                </div>
+                                <div class="more-info">
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="more-info-title">GOLD</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>119</p>
+                                        </div>
+                                        <div class="more-info-title">경기수</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>31</p>
+                                        </div>
+                                        <div class="more-info-title">나이</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="general">
+                                <div class="container">
+                                    <img src="" alt="">
+                                    <p>잘생김</p>
+                                </div>
+
+                                <img class="manager" src="/images/utils/manager.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="match-user-info">
+                        <div class="match-userinfo-card home">
+                            <div class="additional">
+                                <div class="user-card">
+                                    <div class="matchgameinfo__userprofile">
+                                        <img src="" alt="">
+                                    </div>
+                                </div>
+                                <div class="more-info">
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="more-info-title">GOLD</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>2</p>
+                                        </div>
+                                        <div class="more-info-title">경기수</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>19</p>
+                                        </div>
+                                        <div class="more-info-title">나이</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="general">
+                                <div class="container">
+                                    <img src="" alt="">
+                                    <p>호우주의보</p>
+                                </div>
+
+                                <img class="manager" src="/images/utils/manager.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="match-user-info">
+                        <div class="match-userinfo-card home">
+                            <div class="additional">
+                                <div class="user-card">
+                                    <div class="matchgameinfo__userprofile">
+                                        <img src="/images/userprofile/user5.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="more-info">
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <img src="/images/utils/gold.png" alt="">
+                                        </div>
+                                        <div class="more-info-title">GOLD</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>26</p>
+                                        </div>
+                                        <div class="more-info-title">경기수</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>26</p>
+                                        </div>
+                                        <div class="more-info-title">나이</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="general">
+                                <div class="container">
+                                    <img src="/images/utils/gold.png" alt="">
+                                    <p>가면라이더</p>
+                                </div>
+
+                                <img class="manager" src="/images/utils/manager.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="match-team-container">
+                    <div class="match-team-title">
+                        <p>AWAY</p>
+                    </div>
+                    <div class="match-user-info">
+                        <div class="match-userinfo-card away">
+                            <div class="additional">
+                                <div class="user-card">
+                                    <div class="matchgameinfo__userprofile">
+                                        <img src="" alt="">
+                                    </div>
+                                </div>
+                                <div class="more-info">
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="more-info-title">PLATINUM</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>19</p>
+                                        </div>
+                                        <div class="more-info-title">경기수</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>29</p>
+                                        </div>
+                                        <div class="more-info-title">나이</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="general">
+                                <div class="container">
+                                    <img src="" alt="">
+                                    <p>별빛소년이 구르는 중</p>
+                                </div>
+
+                                <img class="manager" src="/images/utils/manager.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="match-user-info">
+                        <div class="match-userinfo-card away">
+                            <div class="additional">
+                                <div class="user-card">
+                                    <div class="matchgameinfo__userprofile">
+                                        <img src="" alt="">
+                                    </div>
+                                </div>
+                                <div class="more-info">
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="more-info-title">PLATINUM</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>19</p>
+                                        </div>
+                                        <div class="more-info-title">경기수</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>29</p>
+                                        </div>
+                                        <div class="more-info-title">나이</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="general">
+                                <div class="container">
+                                    <img src="" alt="">
+                                    <p>별빛소년이 구르는 중</p>
+                                </div>
+
+                                <img class="manager" src="/images/utils/manager.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="match-user-info">
+                        <div class="match-userinfo-card away">
+                            <div class="additional">
+                                <div class="user-card">
+                                    <div class="matchgameinfo__userprofile">
+                                        <img src="" alt="">
+                                    </div>
+                                </div>
+                                <div class="more-info">
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="more-info-title">PLATINUM</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>19</p>
+                                        </div>
+                                        <div class="more-info-title">경기수</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>29</p>
+                                        </div>
+                                        <div class="more-info-title">나이</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="general">
+                                <div class="container">
+                                    <img src="" alt="">
+                                    <p>별빛소년이 구르는 중</p>
+                                </div>
+
+                                <img class="manager" src="/images/utils/manager.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="match-user-info">
+                        <div class="match-userinfo-card away">
+                            <div class="additional">
+                                <div class="user-card">
+                                    <div class="matchgameinfo__userprofile">
+                                        <img src="" alt="">
+                                    </div>
+                                </div>
+                                <div class="more-info">
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="more-info-title">PLATINUM</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>19</p>
+                                        </div>
+                                        <div class="more-info-title">경기수</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>29</p>
+                                        </div>
+                                        <div class="more-info-title">나이</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="general">
+                                <div class="container">
+                                    <img src="" alt="">
+                                    <p>별빛소년이 구르는 중</p>
+                                </div>
+
+                                <img class="manager" src="/images/utils/manager.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="match-user-info">
+                        <div class="match-userinfo-card away">
+                            <div class="additional">
+                                <div class="user-card">
+                                    <div class="matchgameinfo__userprofile">
+                                        <img src="" alt="">
+                                    </div>
+                                </div>
+                                <div class="more-info">
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="more-info-title">PLATINUM</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>19</p>
+                                        </div>
+                                        <div class="more-info-title">경기수</div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="more-info-value">
+                                            <p>29</p>
+                                        </div>
+                                        <div class="more-info-title">나이</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="general">
+                                <div class="container">
+                                    <img src="" alt="">
+                                    <p>별빛소년이 구르는 중</p>
+                                </div>
+
+                                <img class="manager" src="/images/utils/manager.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="content__main__right">
+                <div class="stadium-title">
+                    용산 아이파크몰 (7구장)
+                </div>
+                <div class="right-content-container">
+                    <div class="content-title">
+                        일정 :
+                    </div>
+                    <div class="content-schedule">
+                        2024년 05월 04일 (토요일) 14:00 ~ 16:00
+                    </div>
+                </div>
+                <div class="right-content-container">
+                    <div class="content-title">
+                        장소 :
+                    </div>
+                    <div class="content-container">
+                        <div>
+                            서울 용산구 한강대로23길 55 (한강로3가) HDC아이파크몰 리빙파크 8F / 9F / 10F
+                        </div>
+                        <div class="content-location-container">
+<!--                            <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-6.4 -6.4 76.80 76.80" enable-background="new 0 0 64 64" xml:space="preserve" fill="#727272">-->
+<!--									<g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="3.84"></g><g id="SVGRepo_iconCarrier"> <g> <path fill="#727272" d="M32,0C18.745,0,8,10.745,8,24c0,5.678,2.502,10.671,5.271,15l17.097,24.156C30.743,63.686,31.352,64,32,64 s1.257-0.314,1.632-0.844L50.729,39C53.375,35.438,56,29.678,56,24C56,10.745,45.255,0,32,0z M32,38c-7.732,0-14-6.268-14-14 s6.268-14,14-14s14,6.268,14,14S39.732,38,32,38z"></path> <path fill="#727272" d="M32,12c-6.627,0-12,5.373-12,12s5.373,12,12,12s12-5.373,12-12S38.627,12,32,12z M32,34 c-5.523,0-10-4.478-10-10s4.477-10,10-10s10,4.478,10,10S37.523,34,32,34z"></path> </g> </g>-->
+<!--								</svg>-->
+<!--                            <p>지도보기</p>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="right-content-container">
+                    <div class="match-point-title">
+                        매치 포인트
+                    </div>
+                </div>
+                <div class="match-point-btn-container">
+                    <button class="info-1-Open">매칭 진행 방식</button>
+                    <button class="info-2-Open">구장 시설</button>
+                    <button class="info-3-Open">구장 특이사항</button>
+                    <button class="info-4-Open">환불 정책</button>
+                </div>
+
+                <div class="div-line"></div>
+
+                <div class="right-costInfo-container">
+                    <div>금액 : </div>
+                    <div>11,000원 / 1인</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+
+    <section class="form-container">
+        <!-- <form action="#"> -->
+        <div class="form__btn-container">
+            <button>동료 후기 작성하러가기</button>
+            <button>구장 후기 작성하러가기</button>
+        </div>
+        <!-- </form> -->
+    </section>
+
+</main>
+
+<dialog class="info-1-dialog dialog-type2">
+    <div class="dialog-content-container">
+
+        <div class="title">매치 규칙</div>
+        <ul>
+            <li>모든 파울은 사이드라인에서 킥인</li>
+            <li>골키퍼에게 백패스 가능 손으로는 잡으면 안 돼요</li>
+            <li>사람을 향한 태클 금지</li>
+        </ul>
+
+        <div class="title">진행 방식</div>
+        <ul>
+            <li>풋살화와 개인 음료만 준비하세요</li>
+            <li>매니저가 경기 진행을 도와드려요</li>
+            <li>골키퍼와 휴식을 공평하게 돌아가면서 해요</li>
+            <li>레벨 데이터를 기준으로 팀을 나눠요</li>
+            <li>팀 실력이 맞지 않으면 다른 팀이 될 수 있어요</li>
+        </ul>
+
+        <div class="title">알아두면 좋아요</div>
+        <ul>
+            <li>서로 존중하고 격려하며 함께 즐겨요</li>
+        </ul>
+
+    </div>
+    <div class="dialog-button-container">
+        <!-- <button class="infoModalClose ">매칭 취소</button> -->
+        <button class="info-1-Close ">확인</button>
+    </div>
+</dialog>
+
+<dialog class="info-2-dialog dialog-type3">
+    <div class="dialog-content-container">
+
+        <div class="title">구장 정보</div>
+        <div class="content-container">
+            <diV class="wrapper">
+                <img src="/images/icons/court.svg" alt="구장정보">
+                <div>44x25m</div>
+            </diV>
+            <diV class="wrapper">
+                <img src="/images/icons/parking.svg" alt="주차장">
+                <div>무료주차</div>
+            </diV>
+            <diV class="wrapper">
+                <img src="/images/icons/restroom.svg" alt="화장실">
+                <div>화장실</div>
+            </diV>
+            <diV class="wrapper">
+                <img src="/images/icons/shower.svg" alt="샤워실">
+                <div>샤워실</div>
+            </diV>
+            <diV class="wrapper">
+                <img src="/images/icons/shoes.svg" alt="풋살화대여">
+                <div>풋살화 대여</div>
+            </diV>
+        </div>
+
+    </div>
+    <div class="dialog-button-container">
+        <button class="info-2-Close ">확인</button>
+    </div>
+</dialog>
+
+<dialog class="info-3-dialog dialog-type2">
+    <div class="dialog-content-container">
+
+        <div class="title">구장 특이사항</div>
+<!--        <p>■ 주차: 무료주차 * 쇼핑몰 영업시간(10시~20시)외에는 지상 주차장 입구로만 입차 및 출차 가능 </p>-->
+<!--        <p>■ 경기장에서는 풋살화만 신어야 입장하실 수 있습니다.</p>-->
+<!--        <p>■ 흡연: 흡연 구역 외 절대 금연 (흡연 구역 외에서 흡연 적발 시 이후 서비스 이용에 제재가 있을 수 있습니다.) </p>-->
+<!--        <p>■ 풋살화 대여</p>-->
+<!--        <ul>-->
+<!--            <li>대여비: 2,000원</li>-->
+<!--            <li>대여방법 : 키오스크 결재 또는 계좌이체 후 원하는 사이즈 직접 선택</li>-->
+<!--            <li>대여장소 : 풋살장 라운지(사무실) 내</li>-->
+<!--            <li>사이즈 : 260~285mm(5사이즈 단위)</li>-->
+<!--        </ul>-->
+
+
+    </div>
+    <div class="dialog-button-container">
+        <!-- <button class="infoModalClose ">매칭 취소</button> -->
+        <button class="info-3-Close ">확인</button>
+    </div>
+</dialog>
+
+<dialog class="info-4-dialog dialog-type2">
+    <div class="dialog-content-container">
+
+        <div class="title">환불 정책</div>
+
+        <p class="subheading">신청 취소 시 환불 기준</p>
+        <table border="1">
+            <tr>
+                <td>매치 2일 전</td>
+                <td>무료 취소</td>
+            </tr>
+            <tr>
+                <td>매치 1일 전</td>
+                <td>80% 환급</td>
+            </tr>
+            <tr>
+                <td>당일 ~ 매치 시작 90분 전까지</td>
+                <td>20% 환급</td>
+            </tr>
+            <tr>
+                <td>매치 시작 90분 이내</td>
+                <td>환불 불가</td>
+            </tr>
+        </table>
+        <li>취소 수수료 발생 시 사용된 포인트를 우선 차감 후 차액을 캐시로 지급합니다.</li>
+
+        <li>결제 후 30분 이내에는 하루 1회에 한하여 무료 취소가 가능합니다.</li>
+        <li>매치 시작 90분 이내에는 취소가 불가능합니다.</li>
+        <li>결제 시 실 결제금액을 기준으로 위 규정에 따라 환급됩니다.</li>
+        <br>
+
+    </div>
+    <div class="dialog-button-container">
+        <!-- <button class="infoModalClose ">매칭 취소</button> -->
+        <button class="info-4-Close ">확인</button>
+    </div>
+</dialog>
+<!--지도 없음-->
+<!----------- 알림을 위한 공통 코드 START ----------->
+<!-- 알림 버튼 -->
+<button id="notification-button">
+    <img src="/images/noti_button.png" alt="알림 버튼">
+    <!-- 빨간 동그라미 -->
+    <div id="red-dot"></div>
+</button>
+<!-- 알림 모달 창 -->
+<div id="notification-modal"></div>
+<!----------- 알림을 위한 공통 코드 END ----------->
+</body>
+
+</html>

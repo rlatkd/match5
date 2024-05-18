@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+/* html,
+body {
+	background: #FCEEB5;
+	font-family: Abel, Arial, Verdana, sans-serif;
+} */
+
+.match-userinfo-card {
+	width: 220px;
+	height: 48px;
+	background-color: #fff;
+	background: linear-gradient(#f8f8f8, #fff);
+	box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+	border-radius: 6px;
+	overflow: hidden;
+	position: relative;
+	margin: 1.5rem;
+}
+
+.match-userinfo-card .additional {
+	position: absolute;
+	width: 50px;
+	height: 100%;
+	transition: width 0.4s;
+	overflow: hidden;
+	z-index: 2;
+}
+
+.match-userinfo-card.home .additional {
+	background: linear-gradient(#d94025, #EA4C2F);
+
+}
+
+.match-userinfo-card.away .additional {
+	background: linear-gradient(#7cd424, #89E42F);
+}
+
+.match-userinfo-card:hover .additional {
+	width: 100%;
+	border-radius: 0 5px 5px 0;
+}
+
+.match-userinfo-card .additional .user-card {
+	width: 50px;
+	height: 100%;
+	position: relative;
+	float: left;
+}
+
+.match-userinfo-card .additional .user-card::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 10%;
+	right: -2px;
+	height: 80%;
+	border-left: 2px solid rgba(0, 0, 0, 0.025);
+}
+
+.match-userinfo-card .matchgameinfo__userprofile {
+	position: absolute;
+	top: 2px;
+	left: 3px;
+}
+
+.match-userinfo-card .additional .more-info {
+	position: absolute;
+	left: 50px;
+	width: 170px;
+	height: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.match-userinfo-card .additional .more-info .container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.match-userinfo-card .additional .more-info-value {
+	width: 32px;
+	height: 32px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.match-userinfo-card .additional .more-info-value > img {
+	width: 32px;
+	height: 32px;
+	background-position: center;
+	background-size: cover;
+}
+
+.match-userinfo-card .additional .more-info-value > p {
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+
+}
+
+.match-userinfo-card .additional .more-info-title {
+	font-size: 10px;
+	color: #fff;
+	letter-spacing : 0.1em;
+}
+
+.matchgameinfo__userprofile {
+	width: 40px;
+	height: 40px;
+}
+
+.matchgameinfo__userprofile > img {
+	width: 40px;
+	height: 40px;
+	background-position: center;
+	background-size: cover;
+    border: 2px solid transparent;
+    border-radius: 50%;
+	background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.match-userinfo-card .general {
+	width: 170px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+}
+
+.match-userinfo-card .general .container {
+	width: 120px;
+	display: flex;
+	align-items: center;
+	gap: 3px;
+}
+
+.match-userinfo-card .general .container > img {
+	width: 32px;
+	height: 32px;
+	background-position: center;
+	background-size: cover;
+}
+
+.match-userinfo-card .general .container > p {
+	font-size: 14px;
+	font-weight: bold;
+	/* overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap; */
+}
+
+.match-userinfo-card .general .manager {
+	width: 24px;
+	height: 24px;
+	background-position: center;
+	background-size: cover;
+}

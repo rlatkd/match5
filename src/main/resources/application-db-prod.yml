@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: ENC(0BhualGW0BB2+o01X91JU/3o9uvy0rx0ahRoe7Nx5T9YnE608Leu/z+PqHFUAi6A5SJEafP9ftSxgyFRV14qJp+PHstvVxqaSNHouMmDE7EjiG31eUFV0g==)
+    #url: ENC(mc77Tkb1Zx3iUXlIifILYYJ0MMBGp9xr0pYac1cFxXs2Vpb5JB0UrrmZ3tVuc8oRINjOLdtLu0aNoAgaAENT0l1h7QQrkSq/n2GE0ZY/nvA=)
+    username: ENC(ocSzxctREzIETjgwXhE9AxBwjNPsR3NH)
+    password: ENC(nXhGXszoymgwduOXrMSPG6g77ec429Mv)
+

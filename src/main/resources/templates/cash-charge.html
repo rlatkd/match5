@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MATCH5</title>
+	<link rel="stylesheet" href="/css/cash-charge.style.css">
+	<script src="/js/cash-charge.js" defer></script>
+	<!----------- 알림을 위한 공통 태그 START ----------->
+	<link rel="stylesheet" type="text/css" href="/css/notification.css"> <!-- 알림 CSS -->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script><!-- 알림 JS -->
+	<script src="/js/alarm.js" defer></script><!-- 알림 JS -->
+	<script src="/js/notification-modal.js" defer></script><!-- 알림 JS -->
+	<!----------- 알람을 위한 공통 태그 END ----------->
+</head>
+
+<body>
+
+
+	<header class="header">
+		<nav class="navbar">
+			<a href="/">
+				<img src="/images/logo.png" alt="">
+			</a>
+			<div class="navbar__menu-container">
+				<a href="/stadium-list">
+					<img src="/images/icons/icon-stadium-info.svg" alt="" class="icon-stadium-info">
+				</a>
+				<a href="/mypage">
+					<img src="/images/icons/icon-mypage.svg" alt="" class="icon-mypage">
+				</a>
+			</div>
+		</nav>
+	</header>
+
+
+	<main class="main">
+		<section class="content-container">
+			<div class="content__main">
+				<div class="content__main__form">
+					<div class="payment-info-container">
+						<div class="title"><span>결제정보</span></div>
+						<div class="content-container">
+							<div class="wrapper">
+								<p>충전금액</p>
+								<div>
+									<input class="input-cash" type="text" placeholder="0" maxlength="6">
+									<span>원</span>
+								</div>
+							</div>
+							<div class="div-line"></div>
+							<div class="wrapper">
+								<p>충전 후 캐시 잔액</p>
+								<div>
+									<span class="current-cash"></span>
+									<span>원</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="payment-method-container">
+						<div class="title"><span>결제방법</span></div>
+						<div class="check-method">
+							<div>
+								<input type="radio" id="pay-1" name="pay">
+								<label for="pay-1">
+									<div>
+										신용카드
+									</div>
+								</label>
+							</div>
+							<div>
+								<input type="radio" id="pay-2" name="pay">
+								<label for="pay-2">
+									<div>
+										무통장 입금
+									</div>
+								</label>
+							</div>
+						</div>
+						<div class="check-termsofuse-container">
+							<div class="wrapper">
+								<input type="checkbox" id="termsofuse-1" name="termsofuse">
+								<label for="termsofuse-1">[필수] 서비스 이용 약관</label>
+							</div>
+							<div class="wrapper">
+								<input type="checkbox" id="termsofuse-2" name="termsofuse">
+								<label for="termsofuse-2">[필수] 개인(신용)정보 수집 및 이용 동의</label>
+							</div>
+							<div class="wrapper">
+								<input type="checkbox" id="termsofuse-3" name="termsofuse">
+								<label for="termsofuse-3">[필수] 개인(신용)정보 제3자 제공 동의</label>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form__btn-container">
+						<button class="not-charge-button">취소</button>
+						<button class="charge-button">충전</button>
+					</div>
+				
+				</form>
+
+
+			</div>
+		</section>
+
+	</main>
+	<!----------- 알림을 위한 공통 코드 START ----------->
+	<!-- 알림 버튼 -->
+	<button id="notification-button">
+		<img src="/images/noti_button.png" alt="알림 버튼">
+		<!-- 빨간 동그라미 -->
+		<div id="red-dot"></div>
+	</button>
+	<!-- 알림 모달 창 -->
+	<div id="notification-modal"></div>
+	<!----------- 알림을 위한 공통 코드 END ----------->
+</body>
+
+</html>

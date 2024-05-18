@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--위에는 mapper xml 기본문법 -->
+
+<mapper namespace="site.match5.domain.court.repository.CourtMapper">
+    <select id="findMatchedCourtInfo" resultMap="matchedCourtInfoResultMap">
+        select s.id as stadiumId,
+              c.id             as courtId,
+               IMAGE_URL,
+               c.NAME,
+               cs.SCHEDULE_DATE as scheduleDate,
+               cs.START_T       as startT,
+               cs.END_T         as entT,
+               cs.PRODUCT_PRICE as productPrice,
+               s.LAT,
+               s.LNG
+        from MATCHING_HISTORY mh
+                 join MATCH5_DBA.COURT c on mh.COURT_ID = c.ID
+                 join MATCH5_DBA.COURT_SCHEDULE cs on mh.COURT_SCHEDULE_ID = cs.ID
+                 left join COURT_IMAGE ci on c.ID = ci.COURT_ID
+                 join STADIUM s on c.STADIUM_ID = s.ID
+        where mh.id = #{matchingHistoryId}
+
+    </select>
+
+
+
+    <resultMap id="matchedCourtInfoResultMap" type="MatchedCourtInfoRes">
+        <result property="stadiumId" column="stadiumId"/>
+        <result property="courtId" column="courtId"/>
+        <result property="name" column="name"/>
+        <result property="scheduleDate" column="scheduleDate"/>
+        <result property="startT" column="startT"/>
+        <result property="endT" column="endT"/>
+        <result property="productPrice" column="productPrice"/>
+        <result property="lat" column="lat"/>
+        <result property="lng" column="lng"/>
+        <!-- image url 들은 List<String>으로 매핑 -->
+        <collection property="images" ofType="String" column="image_url">
+            <result column="image_url"/>
+        </collection>
+
+    </resultMap>
+
+
+</mapper>

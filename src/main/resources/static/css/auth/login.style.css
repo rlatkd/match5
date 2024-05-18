@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:900i");
+
+:root {
+	/* Size */
+	--bn-size-type1: 340px;
+	--content-width: 1140px;
+
+	/* Border */
+	--container-boarder-radius: 10px;
+
+	/* color */
+	--bn-background-color: rgb(220, 222, 225, 0.35);
+	--container-box-shadow: 1px 2px 3px 1px rgb(203, 203, 203);
+}
+
+body {
+	width: 100dvw;
+	height: 100dvh;
+	margin: 0;
+}
+
+.header {
+	position: relative;
+	width: 100%;
+	height: 32px;
+	margin: 20px auto;
+	display: flex;
+	justify-content: center;
+}
+
+/* 공통 navbar */
+.navbar {
+	width: var(--content-width);
+	height: 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar__menu-container {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.navbar__menu-container a {
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+
+.navbar__menu-container .icon-stadium-info {
+	margin: 0;
+	list-style: none;
+}
+
+.navbar__menu-container .icon-mypage {
+	width: 28px;
+	height: 28px;
+	margin: 0;
+	list-style: none;
+}
+
+/* 공통 banner-container */
+.banner-container {
+	width: 100%;
+	background-color: var(--bn-background-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* 개별 banner-container */
+.banner-container-type1 {
+	height: var(--bn-size-type1);
+}
+
+/* 공통 banner */
+.banner {
+	width: var(--content-width);
+	height: calc(100% - 40px);
+	border-radius: 10px;
+	background-position: center;
+	background-size: cover;
+}
+
+/* 공통 content-container */
+.content-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content__main {
+	width: var(--content-width);
+	height: 450px;
+	margin-top: 20px;
+	display: flex;
+
+	/*수정*/
+	flex-direction: column;
+	justify-content: center;
+
+	align-items: center;
+
+	border-radius: var(--container-boarder-radius);
+	box-shadow: var(--container-box-shadow);
+}
+
+/* 메인 문구 */
+.main-phrase {
+	font-size: 26px;
+	font-weight: bold;
+	text-decoration-thickness: 3px;
+}
+
+.main-phrase-2 {
+	font-size: 24px;
+	font-weight: bold;
+	text-decoration-thickness: 3px;
+}
+
+.kakao-button {
+	width: 600px;
+	height: 60px;
+	margin-top: 45px;
+	background-color: #fee500;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	gap: 10px;
+}
+
+.kakao-symbol {
+	/*width: 40%;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.kakao-symbol img {
+	width: auto;
+	height: 30px;
+}
+
+.kakao-label {
+	width: fit-content;
+	/*width: 85%;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.kakao-label p {
+	font-size: 20px;
+	font-weight: bold;
+}

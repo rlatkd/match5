@@ -1,0 +1,381 @@
+:root {
+	--content-width: 1140px;
+
+	/* Border */
+	--container-boarder-radius: 10px;
+
+	/* color */
+	--container-box-shadow: 1px 2px 3px 1px rgb(203, 203, 203);
+	--bn-background-color: rgb(220, 222, 225, 0.35);
+}
+
+body {
+	width: 100dvw;
+	height: 100dvh;
+	margin: 0;
+	/* overflow-x: hidden; */
+}
+
+.header {
+	position: relative;
+	width: 100%;
+	height: 32px;
+	margin: 20px auto;
+	display: flex;
+	justify-content: center;
+}
+
+/* navbar */
+.navbar {
+	max-width: var(--content-width);
+	width: 90%;
+	height: 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar__menu-container {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.navbar__menu-container a {
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+
+.navbar__menu-container .icon-stadium-info {
+	margin: 0;
+	list-style: none;
+}
+
+.navbar__menu-container .icon-mypage {
+	width: 28px;
+	height: 28px;
+	margin: 0;
+	list-style: none;
+}
+
+/* 내용 */
+.content-container {
+	border-top: 1px solid rgb(203, 203, 203);
+}
+
+.content-container,
+.form-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content__main {
+	max-width: var(--content-width);
+	width: 90%;
+	height: auto;
+	margin-top: 100px;
+	display: flex;
+	flex-wrap: wrap-reverse;
+	justify-content: center;
+	align-items: center;
+	gap: calc(var(--content-width) - 1100px);
+
+	/* background-color: aqua; */
+	/* border-radius: 10px;
+    box-shadow:	1px 2px 3px 1px rgb(203, 203, 203); */
+}
+
+.mypage-info .content__main__left,
+.mypage-info .content__main__right {
+	width: 450px;
+	height: 700px;
+	border-radius: var(--container-boarder-radius);
+	box-shadow: var(--container-box-shadow);
+}
+
+.mypage-info .content__main__right {
+	width: 600px;
+}
+
+.mypage-info .content__main__left {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.content__main__left {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.mypage-menu {
+	position: relative;
+	margin-left: 25px;
+	margin-top: 50px;
+	width: 83%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.my-matching-history-list {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	border: none;
+	background: transparent;
+	text-align: center;
+	cursor: pointer;
+}
+
+.my-matching-history-list :hover {
+	color: aqua;
+}
+.my-matching-history-list h3 {
+	line-height: 1;
+	vertical-align: middle;
+	font-size: 19px;
+}
+
+.my-court-review-list {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	border: none;
+	background: transparent;
+	text-align: center;
+	cursor: pointer;
+}
+
+.my-court-review-list :hover {
+	color: aqua;
+}
+
+.my-court-review-list h3 {
+	line-height: 1;
+	vertical-align: middle;
+	font-size: 19px;
+}
+
+.cash-charge {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	border: none;
+	background: transparent;
+	text-align: center;
+	cursor: pointer;
+}
+
+.cash-charge :hover {
+	color: aqua;
+}
+
+.cash-charge h3 {
+	line-height: 1;
+	vertical-align: middle;
+	font-size: 19px;
+}
+
+.mypage-menu img {
+	width: 40px;
+	margin-top: 8px;
+}
+
+.content__main__right h1 {
+	margin-top: 50px;
+	margin-left: 50px;
+}
+
+.my-top-section {
+	width: 90%;
+	display: flex;
+	justify-content: space-around;
+	height: 20%;
+	align-items: center;
+}
+
+.my-top-section p {
+	font-size: 20px;
+}
+
+.my-bottom-section {
+	width: 90%;
+	display: flex;
+	justify-content: space-around;
+	height: 80%;
+	align-items: center;
+	flex-direction: column;
+}
+
+
+
+.level-exp {
+	width: 90%;
+	height: 20%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.level p {
+	font-size: 20px;
+	color: #575757;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.level span {
+	font-size: 25px;
+	margin-left: 35%;
+	/*margin-bottom: 50px;*/
+}
+
+.level {
+	height: 100%;
+	width: 320px;
+	/*border-radius: 10px;*/
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	background-color: #f2f5f7;
+	display: flex;
+	flex-direction: column;
+	margin-left: -2%;
+}
+
+
+
+.exp {
+	height: 100%;
+	width: 320px;
+	/*border-radius: 10px;*/
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-color: #f2f5f7;
+	display: flex;
+	flex-direction: column;
+	margin-right: -2%;
+}
+.exp p {
+	font-size: 20px;
+	color: #575757;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.exp span {
+	font-size: 25px;
+	margin-left: 45%;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	height: 15%;
+	border-radius: 10px;
+	background-color: #f2f5f7;
+	padding: 10px; /* 내용과 상하좌우 여백 추가 */
+}
+
+.box p {
+	font-size: 20px;
+	color: #575757;
+	margin-top: 0;
+	margin-left: 10px;
+}
+
+.match-count {
+	text-align: right;
+}
+
+.match-count span{
+	font-size: 40px;
+	text-align: right;
+}
+
+
+
+
+
+
+.image-name {
+	width: 60%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.image-circle {
+	/*height: 100%;*/
+	width: 80px;
+	height: 80px;
+	border: 2px solid black;
+	margin-left: 10%;
+	color: black;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+#profile-image {
+	width: 80px;
+	height: 80px;
+	cursor: pointer;
+	background-position: center;
+	background-size: cover;
+}
+
+#file-input {
+	width: 100%;
+	display: none;
+}
+
+.regist-image {
+	position: absolute;
+	text-align: center;
+	width: auto;
+	height: 100%;
+	margin-top: 80%;
+	background-color: grey;
+	cursor: pointer;
+}
+
+.name {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	height: 100%;
+	margin-right: 10px;
+}
+
+.agegender {
+	display: flex;
+}
+
+.ll {
+	/*margin-left: 90%;*/
+	display: flex;
+	justify-content: end;
+	font-size: 20px;
+}

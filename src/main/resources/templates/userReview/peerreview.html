@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MATCH5</title>
+
+	<link rel="stylesheet" href="/css/peerreview.style.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"> -->
+	<!----------- 알림을 위한 공통 태그 START ----------->
+	<link rel="stylesheet" type="text/css" href="/css/notification.css"> <!-- 알림 CSS -->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script><!-- 알림 JS -->
+	<script src="/js/alarm.js" defer></script><!-- 알림 JS -->
+	<script src="/js/notification-modal.js" defer></script><!-- 알림 JS -->
+	<!----------- 알람을 위한 공통 태그 END ----------->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
+	<script src="/js/peerreview.js" defer></script>
+</head>
+
+<body>
+	<header class="header">
+		<nav class="navbar">
+			<a href="/">
+				<img src="/images/logo.png" alt="">
+			</a>
+			<div class="navbar__menu-container">
+				<a href="/stadium-list">
+					<img src="/images/icons/icon-stadium-info.svg" alt="" class="icon-stadium-info">
+				</a>
+				<a href="/mypage">
+					<img src="/images/icons/icon-mypage.svg" alt="" class="icon-mypage">
+				</a>
+			</div>
+		</nav>
+	</header>
+	<main class="main">
+		<section class="content-container">
+			<div class="content__main">
+				<form action="#" method="get" name="startform" class="content__main__startform">
+					<div class="content__main__info-container">
+						<div class="content__main__title">
+							같이 경기했던 동료에 대한 후기를 남겨주세요
+						</div>
+						<div>
+							혜화 재현 풋살장
+						</div>
+						<div>
+							2024년 3월 28일 (수요일) 17:00 ~ 18:00
+						</div>
+					</div>
+
+					<div class="carousel-wrap">
+						<div class="owl-carousel owl-carousel-peerreview">
+							<div class="item home">
+								<div class="carousel-item-container">
+									<div class="dialog-line line-color team-bg"></div>
+									<div class="carousel-item-content-container">
+										<div class="carousel-item-name">
+											<p>한강위의고양이어떡해</p>
+										</div>
+										<div class="match-userinfo-card">
+											<div class="additional">
+												<div class="user-card">
+													<div class="matchgameinfo__userprofile">
+														<img src="/images/userprofile/user1.jpg" alt="">
+													</div>
+												</div>
+												<div class="more-info">
+													<div class="container">
+														<div class="more-info-value">
+															<p class="team-color">H</p>
+														</div>
+														<div class="more-info-title">참여팀</div>
+													</div>
+													<div class="container">
+														<div class="more-info-value">
+															<img src="/images/utils/platinum.png" alt="">
+														</div>
+														<div class="more-info-title">PLATINUM</div>
+													</div>
+		
+													<div class="container">
+														<div class="more-info-value">
+															<p>19</p>
+														</div>
+														<div class="more-info-title">경기수</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="peerreview-wrap">
+											<div class="peerreview-container">
+												<input type="radio" id="home-1-bad" name="home-1">
+												<label for="home-1-bad">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/bad.png" alt="">
+													</div>
+													<p>레벨보다 조금 아쉬워요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="home-1-soso" name="home-1">
+												<label for="home-1-soso">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/soso.png" alt="">
+													</div>
+													<p>레벨에 맞는 실력이에요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="home-1-good" name="home-1">
+												<label for="home-1-good">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/good.png" alt="">
+													</div>
+													<p>레벨보다 더 훌륭해요</p>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item home">
+								<div class="carousel-item-container">
+									<div class="dialog-line line-color team-bg"></div>
+									<div class="carousel-item-content-container">
+										<div class="carousel-item-name">
+											<p>발흥민</p>
+										</div>
+										<div class="match-userinfo-card">
+											<div class="additional">
+												<div class="user-card">
+													<div class="matchgameinfo__userprofile">
+														<img src="/images/userprofile/user2.jpg" alt="">
+													</div>
+												</div>
+												<div class="more-info">
+													<div class="container">
+														<div class="more-info-value">
+															<p class="team-color">H</p>
+														</div>
+														<div class="more-info-title">참여팀</div>
+													</div>
+													<div class="container">
+														<div class="more-info-value">
+															<img src="/images/utils/platinum.png" alt="">
+														</div>
+														<div class="more-info-title">PLATINUM</div>
+													</div>
+		
+													<div class="container">
+														<div class="more-info-value">
+															<p>20</p>
+														</div>
+														<div class="more-info-title">경기수</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="peerreview-wrap">
+											<div class="peerreview-container">
+												<input type="radio" id="home-2-bad" name="home-2">
+												<label for="home-2-bad">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/bad.png" alt="">
+													</div>
+													<p>레벨보다 조금 아쉬워요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="home-2-soso" name="home-2">
+												<label for="home-2-soso">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/soso.png" alt="">
+													</div>
+													<p>레벨에 맞는 실력이에요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="home-2-good" name="home-2">
+												<label for="home-2-good">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/good.png" alt="">
+													</div>
+													<p>레벨보다 더 훌륭해요</p>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item home">
+								<div class="carousel-item-container">
+									<div class="dialog-line line-color team-bg"></div>
+									<div class="carousel-item-content-container">
+										<div class="carousel-item-name">
+											<p>잘생김</p>
+										</div>
+										<div class="match-userinfo-card">
+											<div class="additional">
+												<div class="user-card">
+													<div class="matchgameinfo__userprofile">
+														<img src="/images/userprofile/user3.jpg" alt="">
+													</div>
+												</div>
+												<div class="more-info">
+													<div class="container">
+														<div class="more-info-value">
+															<p class="team-color">H</p>
+														</div>
+														<div class="more-info-title">참여팀</div>
+													</div>
+													<div class="container">
+														<div class="more-info-value">
+															<img src="/images/utils/gold.png" alt="">
+														</div>
+														<div class="more-info-title">GOLD</div>
+													</div>
+		
+													<div class="container">
+														<div class="more-info-value">
+															<p>119</p>
+														</div>
+														<div class="more-info-title">경기수</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="peerreview-wrap">
+											<div class="peerreview-container">
+												<input type="radio" id="home-3-bad" name="home-3">
+												<label for="home-3-bad">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/bad.png" alt="">
+													</div>
+													<p>레벨보다 조금 아쉬워요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="home-3-soso" name="home-3">
+												<label for="home-3-soso">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/soso.png" alt="">
+													</div>
+													<p>레벨에 맞는 실력이에요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="home-3-good" name="home-3">
+												<label for="home-3-good">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/good.png" alt="">
+													</div>
+													<p>레벨보다 더 훌륭해요</p>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item home">
+								<div class="carousel-item-container">
+									<div class="dialog-line line-color team-bg"></div>
+									<div class="carousel-item-content-container">
+										<div class="carousel-item-name">
+											<p>호우주의보</p>
+										</div>
+										<div class="match-userinfo-card">
+											<div class="additional">
+												<div class="user-card">
+													<div class="matchgameinfo__userprofile">
+														<img src="/images/userprofile/user4.jpg" alt="">
+													</div>
+												</div>
+												<div class="more-info">
+													<div class="container">
+														<div class="more-info-value">
+															<p class="team-color">H</p>
+														</div>
+														<div class="more-info-title">참여팀</div>
+													</div>
+													<div class="container">
+														<div class="more-info-value">
+															<img src="/images/utils/gold.png" alt="">
+														</div>
+														<div class="more-info-title">GOLD</div>
+													</div>
+		
+													<div class="container">
+														<div class="more-info-value">
+															<p>2</p>
+														</div>
+														<div class="more-info-title">경기수</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="peerreview-wrap">
+											<div class="peerreview-container">
+												<input type="radio" id="home-4-bad" name="home-4">
+												<label for="home-4-bad">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/bad.png" alt="">
+													</div>
+													<p>레벨보다 조금 아쉬워요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="home-4-soso" name="home-4">
+												<label for="home-4-soso">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/soso.png" alt="">
+													</div>
+													<p>레벨에 맞는 실력이에요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="home-4-good" name="home-4">
+												<label for="home-4-good">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/good.png" alt="">
+													</div>
+													<p>레벨보다 더 훌륭해요</p>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="item away">
+								<div class="carousel-item-container">
+									<div class="dialog-line line-color team-bg"></div>
+									<div class="carousel-item-content-container">
+										<div class="carousel-item-name">
+											<p>away이름</p>
+										</div>
+										<div class="match-userinfo-card">
+											<div class="additional">
+												<div class="user-card">
+													<div class="matchgameinfo__userprofile">
+														<img src="/images/userprofile/user5.jpg" alt="">
+													</div>
+												</div>
+												<div class="more-info">
+													<div class="container">
+														<div class="more-info-value">
+															<p class="team-color">A</p>
+														</div>
+														<div class="more-info-title">참여팀</div>
+													</div>
+													<div class="container">
+														<div class="more-info-value">
+															<img src="/images/utils/gold.png" alt="">
+														</div>
+														<div class="more-info-title">GOLD</div>
+													</div>
+		
+													<div class="container">
+														<div class="more-info-value">
+															<p>2</p>
+														</div>
+														<div class="more-info-title">경기수</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="peerreview-wrap">
+											<div class="peerreview-container">
+												<input type="radio" id="away-1-bad" name="away-1">
+												<label for="away-1-bad">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/bad.png" alt="">
+													</div>
+													<p>레벨보다 조금 아쉬워요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="away-1-soso" name="away-1">
+												<label for="away-1-soso">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/soso.png" alt="">
+													</div>
+													<p>레벨에 맞는 실력이에요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="away-1-good" name="away-1">
+												<label for="away-1-good">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/good.png" alt="">
+													</div>
+													<p>레벨보다 더 훌륭해요</p>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item away">
+								<div class="carousel-item-container">
+									<div class="dialog-line line-color team-bg"></div>
+									<div class="carousel-item-content-container">
+										<div class="carousel-item-name">
+											<p>away이름2</p>
+										</div>
+										<div class="match-userinfo-card">
+											<div class="additional">
+												<div class="user-card">
+													<div class="matchgameinfo__userprofile">
+														<img src="/images/userprofile/user5.jpg" alt="">
+													</div>
+												</div>
+												<div class="more-info">
+													<div class="container">
+														<div class="more-info-value">
+															<p class="team-color">A</p>
+														</div>
+														<div class="more-info-title">참여팀</div>
+													</div>
+													<div class="container">
+														<div class="more-info-value">
+															<img src="/images/utils/gold.png" alt="">
+														</div>
+														<div class="more-info-title">GOLD</div>
+													</div>
+		
+													<div class="container">
+														<div class="more-info-value">
+															<p>2</p>
+														</div>
+														<div class="more-info-title">경기수</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="peerreview-wrap">
+											<div class="peerreview-container">
+												<input type="radio" id="away-2-bad" name="away-2">
+												<label for="away-2-bad">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/bad.png" alt="">
+													</div>
+													<p>레벨보다 조금 아쉬워요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="away-2-soso" name="away-2">
+												<label for="away-2-soso">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/soso.png" alt="">
+													</div>
+													<p>레벨에 맞는 실력이에요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="away-2-good" name="away-2">
+												<label for="away-2-good">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/good.png" alt="">
+													</div>
+													<p>레벨보다 더 훌륭해요</p>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item away">
+								<div class="carousel-item-container">
+									<div class="dialog-line line-color team-bg"></div>
+									<div class="carousel-item-content-container">
+										<div class="carousel-item-name">
+											<p>away이름3</p>
+										</div>
+										<div class="match-userinfo-card">
+											<div class="additional">
+												<div class="user-card">
+													<div class="matchgameinfo__userprofile">
+														<img src="/images/userprofile/user5.jpg" alt="">
+													</div>
+												</div>
+												<div class="more-info">
+													<div class="container">
+														<div class="more-info-value">
+															<p class="team-color">A</p>
+														</div>
+														<div class="more-info-title">참여팀</div>
+													</div>
+													<div class="container">
+														<div class="more-info-value">
+															<img src="/images/utils/gold.png" alt="">
+														</div>
+														<div class="more-info-title">GOLD</div>
+													</div>
+		
+													<div class="container">
+														<div class="more-info-value">
+															<p>2</p>
+														</div>
+														<div class="more-info-title">경기수</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="peerreview-wrap">
+											<div class="peerreview-container">
+												<input type="radio" id="away-3-bad" name="away-3">
+												<label for="away-3-bad">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/bad.png" alt="">
+													</div>
+													<p>레벨보다 조금 아쉬워요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="away-3-soso" name="away-3">
+												<label for="away-3-soso">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/soso.png" alt="">
+													</div>
+													<p>레벨에 맞는 실력이에요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="away-3-good" name="away-3">
+												<label for="away-3-good">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/good.png" alt="">
+													</div>
+													<p>레벨보다 더 훌륭해요</p>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item away">
+								<div class="carousel-item-container">
+									<div class="dialog-line line-color team-bg"></div>
+									<div class="carousel-item-content-container">
+										<div class="carousel-item-name">
+											<p>away이름4</p>
+										</div>
+										<div class="match-userinfo-card">
+											<div class="additional">
+												<div class="user-card">
+													<div class="matchgameinfo__userprofile">
+														<img src="/images/userprofile/user5.jpg" alt="">
+													</div>
+												</div>
+												<div class="more-info">
+													<div class="container">
+														<div class="more-info-value">
+															<p class="team-color">A</p>
+														</div>
+														<div class="more-info-title">참여팀</div>
+													</div>
+													<div class="container">
+														<div class="more-info-value">
+															<img src="/images/utils/gold.png" alt="">
+														</div>
+														<div class="more-info-title">GOLD</div>
+													</div>
+		
+													<div class="container">
+														<div class="more-info-value">
+															<p>2</p>
+														</div>
+														<div class="more-info-title">경기수</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="peerreview-wrap">
+											<div class="peerreview-container">
+												<input type="radio" id="away-4-bad" name="away-4">
+												<label for="away-4-bad">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/bad.png" alt="">
+													</div>
+													<p>레벨보다 조금 아쉬워요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="away-4-soso" name="away-4">
+												<label for="away-4-soso">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/soso.png" alt="">
+													</div>
+													<p>레벨에 맞는 실력이에요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="away-4-good" name="away-4">
+												<label for="away-4-good">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/good.png" alt="">
+													</div>
+													<p>레벨보다 더 훌륭해요</p>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item away">
+								<div class="carousel-item-container">
+									<div class="dialog-line line-color team-bg"></div>
+									<div class="carousel-item-content-container">
+										<div class="carousel-item-name">
+											<p>away이름5</p>
+										</div>
+										<div class="match-userinfo-card">
+											<div class="additional">
+												<div class="user-card">
+													<div class="matchgameinfo__userprofile">
+														<img src="/images/userprofile/user5.jpg" alt="">
+													</div>
+												</div>
+												<div class="more-info">
+													<div class="container">
+														<div class="more-info-value">
+															<p class="team-color">A</p>
+														</div>
+														<div class="more-info-title">참여팀</div>
+													</div>
+													<div class="container">
+														<div class="more-info-value">
+															<img src="/images/utils/gold.png" alt="">
+														</div>
+														<div class="more-info-title">GOLD</div>
+													</div>
+		
+													<div class="container">
+														<div class="more-info-value">
+															<p>2</p>
+														</div>
+														<div class="more-info-title">경기수</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="peerreview-wrap">
+											<div class="peerreview-container">
+												<input type="radio" id="away-5-bad" name="away-5">
+												<label for="away-5-bad">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/bad.png" alt="">
+													</div>
+													<p>레벨보다 조금 아쉬워요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="away-5-soso" name="away-5">
+												<label for="away-5-soso">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/soso.png" alt="">
+													</div>
+													<p>레벨에 맞는 실력이에요</p>
+												</label>
+											</div>
+											<div class="peerreview-container">
+												<input type="radio" id="away-5-good" name="away-5">
+												<label for="away-5-good">
+													<div class="peerreview-icon-container" >
+														<img src="/images/utils/good.png" alt="">
+													</div>
+													<p>레벨보다 더 훌륭해요</p>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="startform__submit-container">
+
+						<button type="submit">후기 작성완료</button><br>
+					</div>
+				</form>
+
+			</div>
+		</section>
+	</main>
+	<!----------- 알림을 위한 공통 코드 START ----------->
+	<!-- 알림 버튼 -->
+	<button id="notification-button">
+		<img src="/images/noti_button.png" alt="알림 버튼">
+		<!-- 빨간 동그라미 -->
+		<div id="red-dot"></div>
+	</button>
+	<!-- 알림 모달 창 -->
+	<div id="notification-modal"></div>
+	<!----------- 알림을 위한 공통 코드 END ----------->
+</body>
+
+</html>

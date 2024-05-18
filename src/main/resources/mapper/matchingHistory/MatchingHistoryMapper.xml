@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--위에는 mapper xml 기본문법 -->
+
+<mapper namespace="site.match5.domain.matchingHistory.repository.MatchingHistoryMapper">
+
+
+    <select id="checkMatchingHistoryExist" resultType="int">
+        select count(*) from MATCHING_HISTORY where id = #{matchingHistoryId}
+    </select>
+
+    <select id="checkUserInMatching" resultType="Integer">
+        select count(*) from MATCHED_USERLIST where USER_ID = #{userId} and MATCHING_HISTORY_ID = #{matchingHistoryId}
+    </select>
+
+    <update id="increaseConfirmUserCount" parameterType="Integer">
+        update MATCHING_HISTORY
+        set confirm_user_count =confirm_user_count+1
+        where id = #{matchingHistoryId}
+    </update>
+
+    <select id="findConfirmUserCount" resultType="Integer">
+        select CONFIRM_USER_COUNT from MATCHING_HISTORY
+        where id = #{matchingHistoryId}
+    </select>
+
+
+    <delete id="deleteMatchingHistory">
+        delete from MATCHING_HISTORY where ID =#{matchingHistoryId}
+    </delete>
+
+
+    <update id="updateMatchingHistoryStatus">
+        update MATCHING_HISTORY set status  = #{matchingHistoryStatusReq.status} where id = #{matchingHistoryId}
+    </update>
+
+
+
+    <select id="findAllMatchingHistoryByUserId" resultType="MatchingHistoryRes">
+        SELECT id,stadiumName, courtName, SCHEDULE_DATE as selectedDate, START_T as startT, END_T as endT, STATUS as status FROM (
+                          SELECT mh.id as id,s.name AS stadiumName, c.name AS courtName, cs.SCHEDULE_DATE, cs.START_T, cs.END_T, mh.STATUS, ROWNUM AS rnum
+                          FROM MATCHING_HISTORY mh
+                                   JOIN COURT_SCHEDULE cs ON mh.COURT_SCHEDULE_ID = cs.ID
+                                   JOIN COURT c ON cs.COURT_ID = c.ID
+                                   JOIN STADIUM s ON c.STADIUM_ID = s.ID
+                                   JOIN MATCHED_USERLIST mu ON mh.ID = mu.MATCHING_HISTORY_ID
+                          WHERE mu.USER_ID = #{userId}
+                          ORDER BY cs.SCHEDULE_DATE
+                      )
+        WHERE rnum BETWEEN #{start} AND #{end}
+    </select>
+
+
+</mapper>

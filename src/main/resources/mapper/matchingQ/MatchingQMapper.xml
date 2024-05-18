@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--위에는 mapper xml 기본문법 -->
+
+<mapper namespace="site.match5.domain.matchingQ.repository.MatchingQMapper">
+
+    <insert id="saveMatchingQ" parameterType="MatchingQ">
+        insert into MATCHING_QUEUE(user_id, selected_date, selected_time, location, is_manager, is_outdoor)
+        VALUES (#{userId},#{selectedDate},#{selectedTime},#{location},#{isManager},#{isOutdoor})
+    </insert>
+
+</mapper>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--위에는 mapper xml 기본문법 -->
+
+<mapper namespace="site.match5.domain.stadium.repository.StadiumMapper">
+    <!-- 구장 리뷰 작성용 구장 정보 가져오기 by 구장아이디  join 풋살장 [구장 이름,구장 사진, 풋살장 위도경도]-->
+    <select id="findCourtInfoById" resultMap="courtInfoResultMap">
+        select distinct c.name,
+                        s.lat,
+                        s.lng,
+                        ci.IMAGE_URL
+        from court c
+                 join STADIUM s on s.ID = c.STADIUM_ID
+                 join COURT_IMAGE CI on c.ID = CI.COURT_ID
+        where c.id = #{courtId}
+    </select>
+
+<!--    전체 풋살장 조회 [ 풋살장 이름 , 풋살장 지역 ]  페이징 처리 -->
+    <select id="findAllStadium" resultType="StadiumNameAndLocRes">
+      SELECT id as stadiumId,name,location
+        FROM (SELECT ROWNUM AS rn, s.*
+            FROM STADIUM s
+            ORDER BY s.id DESC)
+        WHERE rn BETWEEN #{start} AND #{end}
+
+    </select>
+
+<!--    해당 지역 전체 풋살장 조회 by 지역 [ 풋살장 이름 , 풋살장 지역 ]-->
+    <select id="findAllStadiumByLocation" resultType="StadiumNameAndLocRes">
+        SELECT id as stadiumId,name,location
+        FROM (SELECT ROWNUM AS rn, s.*
+              FROM STADIUM s
+              where location = #{location}
+              ORDER BY s.id DESC)
+        WHERE rn BETWEEN #{start} AND #{end}
+    </select>
+
+<!--    해당 풋살장의 모든 구장 사진, 풋살장 이름, 풋살장 위도경도-->
+    <select id="findStadiumInfo" resultMap="StadiumInfoResResultMap">
+        select s.id,s.NAME, s.LNG, s.LAT, ci.IMAGE_URL
+        from STADIUM s
+                 join MATCH5_DBA.COURT c on s.ID = c.STADIUM_ID
+                 join MATCH5_DBA.COURT_IMAGE ci on c.ID = ci.COURT_ID
+        where s.id = #{stadiumId}
+
+    </select>
+
+
+<!--    구장 편의시설 조회-->
+    <select id="findStadiumFacilityInfoById" resultType="StadiumFacilityInfoRes">
+        select IS_PARKING, IS_TOILET, IS_SHOWER, IS_SHOES,SIZE_X,SIZE_Y
+        from STADIUM
+                 join court on STADIUM.ID = court.STADIUM_ID
+        where court.id = #{courtId}
+    </select>
+
+<!--    구장 공지 조회-->
+    <select id="findStadiumNoticeById" resultType="String">
+        select RENTAL_INTRO
+        from STADIUM
+                 join court on STADIUM.ID = court.STADIUM_ID
+        where court.id = #{courtId}
+    </select>
+
+
+    <select id="findCourtInfoByCourtReview" resultMap="courtInfoResultMap">
+        select distinct c.name,
+                        s.lat,
+                        s.lng,
+                        ci.IMAGE_URL
+        from court c
+                 join STADIUM s on s.ID = c.STADIUM_ID
+                 join COURT_IMAGE CI on c.ID = CI.COURT_ID
+                 join MATCH5_DBA.COURT_REVIEW CR on c.ID = CR.COURT_ID
+        where cr.id = #{findCourtInfoByCourtReview}
+    </select>
+
+
+    <select id ="findAllStadiumPosition" resultMap="StadiumInfoResResultMap">
+        select s.id,s.NAME, s.LNG, s.LAT, ci.IMAGE_URL
+        from STADIUM s
+                 join MATCH5_DBA.COURT c on s.ID = c.STADIUM_ID
+                 join MATCH5_DBA.COURT_IMAGE ci on c.ID = ci.COURT_ID
+    </select>
+
+    <select id ="findAllStadiumPositionByLocation" resultMap="StadiumInfoResResultMap">
+        select s.id,s.NAME, s.LNG, s.LAT, ci.IMAGE_URL
+        from STADIUM s
+                 join MATCH5_DBA.COURT c on s.ID = c.STADIUM_ID
+                 join MATCH5_DBA.COURT_IMAGE ci on c.ID = ci.COURT_ID
+                where s.LOCATION = #{location}
+    </select>
+
+
+    <select id="findStadiumPosition" resultMap="StadiumInfoResResultMap">
+        select s.id,s.NAME, s.LNG, s.LAT, ci.IMAGE_URL
+        from STADIUM s
+                 join MATCH5_DBA.COURT c on s.ID = c.STADIUM_ID
+                 join MATCH5_DBA.COURT_IMAGE ci on c.ID = ci.COURT_ID
+        where s.id = #{stadiumId}
+    </select>
+
+    <select id="findPagingInfo" resultType="StadiumPagingInfo">
+        select count(*) as totalItem, trunc(count(*)/5) as totalPage
+        from STADIUM
+    </select>
+
+
+    <select id="findAllStadiumInfo" resultType="Stadium">
+        select id,
+               location,
+               is_parking ,
+               is_toilet,
+               is_shower,
+               is_shoes,
+               rental_intro,
+               name,
+               lat,
+               lng
+        from STADIUM
+    </select>
+
+
+    <select id="findAllStadiumInfoByLocation" resultType="Stadium">
+        select id,
+               location,
+               is_parking ,
+               is_toilet,
+               is_shower,
+               is_shoes,
+               rental_intro,
+               name,
+               lat,
+               lng
+        from STADIUM where location = #{location}
+    </select>
+
+
+    <select id="findStadiumFacilityInfoByStadiumId" resultType="StadiumFacilityInfoRes">
+        select IS_PARKING, IS_TOILET, IS_SHOWER, IS_SHOES,SIZE_X,SIZE_Y
+        from STADIUM
+                 join court on STADIUM.ID = court.STADIUM_ID
+        where STADIUM.id = #{stadiumId}
+    </select>
+
+    <select id="findStadiumNoticeByStadiumId" resultType="String">
+        select RENTAL_INTRO
+        from STADIUM
+                 join court on STADIUM.ID = court.STADIUM_ID
+        where court.id = #{stadiumId}
+    </select>
+
+
+
+
+
+    <resultMap id="courtInfoResultMap" type="CourtInfoRes">
+        <result property="name" column="name"/>
+        <result property="lat" column="lat"/>
+        <result property="lng" column="lng"/>
+        <!-- image url 들은 List<String>으로 매핑 -->
+        <collection property="images" ofType="String" column="image_url">
+            <result column="image_url"/>
+        </collection>
+    </resultMap>
+
+
+    <resultMap id="StadiumInfoResResultMap" type="StadiumInfoRes">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="lat" column="lat"/>
+        <result property="lng" column="lng"/>
+        <collection property="images" ofType="String" column="image_url">
+            <result column="image_url"/>
+        </collection>
+    </resultMap>
+
+
+
+</mapper>

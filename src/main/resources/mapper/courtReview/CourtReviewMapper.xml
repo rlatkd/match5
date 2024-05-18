@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--위에는 mapper xml 기본문법 -->
+
+<mapper namespace="site.match5.domain.courtReview.repository.CourReviewMapper">
+    <!--    구장평가 한개 조회-->
+    <select id="findCourtReviewById" resultType="CourtReview">
+        select *
+        from court_review
+        where id = #{id}
+    </select>
+    <!--    사용자가 작성한 모든 구장평가 조회-->
+    <select id="findAllCourtReviewByUserId" resultType="CourtReview">
+        select   cr.*, c.name as courtName,s.name as stadiumName
+        from court_review cr
+                 join COURT c on cr.COURT_ID = c.ID
+                 join STADIUM s on c.STADIUM_ID = s.ID
+        where user_id = #{userId};
+
+    </select>
+
+    <select id="findAllCourtReviewByStadiumId" resultType="CourtReview">
+        select cr.id, cr.user_id, cr.court_id, cr.content, cr.review_rate,cl.NICKNAME as nickname , cr.created_at
+        from COURT_REVIEW cr
+                 join COURT c on cr.COURT_ID = c.ID
+                 join STADIUM s on c.STADIUM_ID = s.ID
+                 join CLIENT cl on cr.USER_ID = cl.ID
+        where s.id = #{stadiumId}
+    </select>
+
+    <!--    구장평가 생성 프로시저-->
+    <insert id="saveCourtReview" parameterType="java.util.HashMap" statementType="CALLABLE">
+        {call SAVE_COURT_REVIEW
+              (
+                #{v_user_id, mode=IN, jdbcType=INTEGER },
+                #{v_court_id, mode=IN, jdbcType=INTEGER },
+                #{v_content, mode=IN, jdbcType=VARCHAR },
+                #{v_review_rate, mode=IN, jdbcType=INTEGER },
+                #{success_row, mode=OUT, jdbcType=INTEGER }
+              )
+            }
+
+    </insert>
+
+
+    <!--    구장평가 삭제 프로시저-->
+    <delete id="deleteCourtReviewById" parameterType="java.util.HashMap" statementType="CALLABLE">
+        {call DELETE_COURT_REVIEW(
+                #{v_court_review_id, mode=IN, jdbcType=INTEGER },
+                #{success_row, mode=OUT, jdbcType=INTEGER }
+              )}
+    </delete>
+
+    <!--    구장 평가 업데이트 , 프로시저  -->
+    <update id="updateCourtReviewById" parameterType="java.util.HashMap" statementType="CALLABLE">
+        {call UPDATE_COURT_REVIEW(
+                #{v_court_review_id, mode=IN, jdbcType=INTEGER },
+                #{v_content, mode=IN, jdbcType=VARCHAR },
+                #{v_review_rate, mode=IN, jdbcType=INTEGER },
+                #{success_row, mode=OUT, jdbcType=INTEGER }
+              )}
+    </update>
+
+
+
+
+    <select id="findAvgCourtReviewRateByStadiumId" resultType="float">
+        select round(avg(AVG_RATE), 1)
+        from STADIUM s
+                 join MATCH5_DBA.COURT c on s.ID = c.STADIUM_ID
+                 join MATCH5_DBA.COURT_REVIEW CR on c.ID = CR.COURT_ID
+        where s.ID = #{stadiumId}
+
+    </select>
+
+    <select id="findStadiumTotalReviewCount" resultType="int">
+        select count(*) from COURT_REVIEW
+                                 join COURT on COURT_REVIEW.COURT_ID = COURT.ID
+                                 join STADIUM on COURT.STADIUM_ID = STADIUM.ID
+        where STADIUM_ID =#{stadiumId}
+    </select>
+
+    <select id="findCourtReviewDetailById" resultMap="courtReviewDetailResResultMap">
+        select distinct cr.id          as courtReviewId,
+                        cr.USER_ID     as userId,
+                        c.id           as courtId,
+                        cr.CONTENT     as content,
+                        cr.REVIEW_RATE as reviewRate,
+                        cr.CREATED_AT  as createdAt,
+                        c.name         as courtName,
+                        s.lng          as lng,
+                        s.lat          as lat,
+                        ci.IMAGE_URL   as imageUrl
+
+        from COURT_REVIEW cr
+                 left join COURT_IMAGE ci on cr.COURT_ID = ci.COURT_ID
+                 join COURT c on cr.COURT_ID = c.ID
+                 join stadium s on c.STADIUM_ID = s.ID
+        where cr.id = #{courtReviewId}
+    </select>
+
+    <select id="findAllCourtReviewDetailById" resultMap="courtReviewDetailResResultMap">
+        select distinct
+            cr.id      as courtReviewId,
+            cr.USER_ID as userId,
+            c.id       as courtId,
+            cr.CONTENT as content,
+            cr.REVIEW_RATE as reviewRate,
+            cr.CREATED_AT as createdAt,
+            c.name as courtName,
+            s.lng as lng,
+            s.lat as lat,
+            ci.IMAGE_URL as imageUrl
+        from COURT_REVIEW cr
+                 left join COURT_IMAGE ci on cr.COURT_ID = ci.COURT_ID
+                 join COURT c on cr.COURT_ID = c.ID
+                 join stadium s on c.STADIUM_ID = s.ID
+        where cr.USER_ID = #{userId}
+    </select>
+
+    <select id="findAllCourtReviewDetailByIdPaging" resultMap="courtReviewDetailResResultMap">
+        select    courtReviewId,
+                   userId,
+                   courtId,
+                   content,
+                   reviewRate,
+                   createdAt,
+                  courtName,
+                   lng,
+                   lat,
+                   imageUrl from (
+                          select distinct
+                              ROWNUM AS rn ,
+                              cr.id      as courtReviewId,
+                              cr.USER_ID as userId,
+                              c.id       as courtId,
+                              cr.CONTENT as content,
+                              cr.REVIEW_RATE as reviewRate,
+                              cr.CREATED_AT as createdAt,
+                              c.name as courtName,
+                              s.lng as lng,
+                              s.lat as lat,
+                              ci.IMAGE_URL as imageUrl
+                          from COURT_REVIEW cr
+                                   left join COURT_IMAGE ci on cr.COURT_ID = ci.COURT_ID
+                                   join COURT c on cr.COURT_ID = c.ID
+                                   join stadium s on c.STADIUM_ID = s.ID
+                          where cr.USER_ID = #{userId}
+                          order by cr.CREATED_AT desc
+                      )
+        WHERE rn BETWEEN #{start} AND #{end}
+    </select>
+
+    <resultMap id="courtReviewDetailResResultMap" type="CourtReviewDetailRes">
+        <result property="courtReviewId" column="courtReviewId"/>
+        <result property="userId" column="userId"/>
+        <result property="courtId" column="courtId"/>
+        <result property="content" column="content"/>
+        <result property="reviewRate" column="reviewRate"/>
+        <result property="createdAt" column="createdAt"/>
+        <result property="courtName" column="courtName"/>
+        <result property="lng" column="lng"/>
+        <result property="lat" column="lat"/>
+        <collection property="images" ofType="String" column="imageUrl">
+            <result column="imageUrl"/>
+        </collection>
+    </resultMap>
+
+</mapper>

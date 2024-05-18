@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.match5.domain.auth.repository.AuthMapper">
+
+    <sql id="tableColumns">
+        level_id, gender, age, nickname, kakao_id, current_exp
+    </sql>
+
+    <select id="getKakaoId" parameterType="String" resultType="String">
+        SELECT kakao_id FROM CLIENT WHERE kakao_id = #{kakaoId}
+    </select>
+
+    <insert id="insertClientAuthInfo" parameterType="ClientAuthInfoDto">
+        INSERT INTO CLIENT (
+        <include refid="tableColumns"/>
+        ) VALUES (
+        #{levelId},
+        #{gender},
+        #{age},
+        #{nickName},
+        #{kakaoId},
+        #{currentExp}
+        )
+    </insert>
+
+
+    <insert id="insertClientAuthInfo2" parameterType="ClientAuthInfoDto2" useGeneratedKeys="true" keyProperty="userId">
+        <selectKey keyProperty="userId" resultType="int" order="AFTER">
+            SELECT CLIENT_SEQ.currval as userId FROM DUAL
+        </selectKey>
+        insert into CLIENT(id, kakao_id, nickname,gender, age ,level_id , current_exp)
+        VALUES(#{userId},#{kakaoId},#{nickName},#{gender},#{age},#{levelId},#{currentExp})
+    </insert>
+
+    <insert id="insertClientMatchingStatus" parameterType="int">
+        insert into CLIENT_MATCHING_STATUS(user_id) VALUES (#{userId})
+    </insert>
+
+
+    <select id="getUserIdByKakaoId" resultType="int" >
+        select id from CLIENT where KAKAO_ID = #{kakaoId}
+    </select>
+
+</mapper>

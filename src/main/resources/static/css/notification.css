@@ -1,0 +1,104 @@
+#notification-button {
+    /*position: fixed;*/
+    /*bottom: 8vh; */
+    /*right: 8vw;  */
+    background-color: transparent;
+    border: none;
+    /*font-size: 24px;*/
+    /*width:70px;*/
+    /*height:70px;*/
+    /*z-index: 1000; */
+    position: fixed;
+    width: fit-content;
+    height: fit-content;
+    bottom: 30px;
+    right: 30px;
+}
+
+#notification-button img {
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#notification-button img:hover, #notification-button img:hover + #red-dot {
+    transform: scale(1.1);
+}
+/*모달창 디자인*/
+#notification-modal {
+    position: fixed;
+    /*display: none;*/
+    bottom: 150px;
+    right: 30px;
+    width: 400px;
+    max-height: 350px;
+    height: fit-content;
+
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    overflow: auto;
+    /*z-index: 1000; */
+}
+
+#notification-modal::-webkit-scrollbar {
+    width: 10px;
+}
+
+#notification-modal::-webkit-scrollbar-thumb {
+    background-color: #b9babb;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+#notification-modal::-webkit-scrollbar-track {
+    background-color: rgb(215, 212, 236);
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+.notification-content {
+    width: 95%;
+    height: 70px;
+    margin: 10px auto;
+    background: rgba( 255, 255, 255, 0.65 );
+    box-shadow: 0 2px 1px 1px rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.notification-content:hover {
+    background: rgba(233, 231, 246, 0.65);
+
+}
+
+.notification-content > p {
+    width: 90%;
+    margin: 0 auto;
+    color: #323232;
+    font-weight: bold;
+}
+
+/* 빨간 동그라미 스타일 */
+#red-dot {
+    position: absolute;
+    top: 13px; /* 버튼의 상단에 위치하도록 조정 */
+    right: 19px; /* 버튼의 우측에 위치하도록 조정 */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: red;
+    display: none;
+}
+
+

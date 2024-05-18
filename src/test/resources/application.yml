@@ -1,0 +1,27 @@
+
+# db 공통 설정
+
+mybatis:
+  type-aliases-package: site.match5.domain.* # 파라미터나,리턴타입(resultType)에 대한 정보를 적을때 해당 타입의 패키지이름까지 적어줘야하는데 미리 패키지를 설정해주면 생략가능하다.
+  configuration:
+    map-underscore-to-camel-case: true  # 데이터베이스는 대부분 언더스코어(_)를 사용하는데 그것을 객체필드가 주로쓰는 카멜케이스로 변환해주는 설정
+  mapper-locations: classpath:mapper/**/*.xml # xml 은 resources 아래 mapper 인터페이스와 같은 이름의 경로에 존재해야하지만 해당 설정으로 원하는곳에 보관 가능하다.
+
+
+logging:
+  level:
+    site.match5.domain : trace # MyBatis 에서 실행되는 쿼리 로그를 확인할 수 있다. ( mybatis 인터페이스들이 저장되는 곳으로 설정하면된다.)
+
+
+
+spring:
+  datasource:
+    #    url: ENC(W38IdFPR6V/syBBmbIwbnqiWcZD8q6XnGJQAO6wRG7u8yKF3B/CPUmvp8ofxb0eS)
+    #    username: ENC(G3LK/MmYyxzSJ26OCTJdFw==)
+    #    password: ENC(STz6OTBFAkaKqJEockcnsg==)
+
+    url: jdbc:oracle:thin:@match5proddb_high?TNS_ADMIN=./src/main/resources/wallet
+    username: MATCH5_DBA
+    password: Oracle1q2w3e4r!
+#    username: PROJECT
+#    password: 1004

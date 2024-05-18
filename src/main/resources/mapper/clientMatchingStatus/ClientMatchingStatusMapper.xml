@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--위에는 mapper xml 기본문법 -->
+
+<mapper namespace="site.match5.domain.clientMatchingStatus.repository.ClientMatchingStatusMapper">
+
+    <update id="updateUserMatchingStatus">
+        update CLIENT_MATCHING_STATUS
+        <set>
+            <if test="clientMatchingStatus.status != null">
+                STATUS = #{clientMatchingStatus.status},
+            </if>
+            <if test="clientMatchingStatus.matchDay != null">
+                MATCH_DAY = #{clientMatchingStatus.matchDay},
+            </if>
+            <if test="clientMatchingStatus.matchTime != null">
+                MATCH_TIME = #{clientMatchingStatus.matchTime},
+            </if>
+        </set>
+        where USER_ID = #{userId}
+    </update>
+
+    <select id="findClientMatchingStatus" parameterType="ClientMatchingStatus">
+        select * from CLIENT_MATCHING_STATUS where USER_ID = #{userId}
+    </select>
+</mapper>

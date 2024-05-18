@@ -1,0 +1,412 @@
+/********************** 공통 **********************/
+:root {
+	/* Size */
+	--bn-size-type1: 340px;
+	--bn-size-type2: 200px;
+
+	--content-width: 1140px;
+
+	/* color */
+	--bn-background-color: rgb(220, 222, 225, 0.35);
+}
+
+body {
+	width: 100dvw;
+	height: 100dvh;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+.header {
+	position: relative;
+	width: 100%;
+	height: 32px;
+	margin: 20px auto;
+	display: flex;
+	justify-content: center;
+}
+
+/* navbar */
+.navbar {
+	max-width: var(--content-width);
+	width: 90%;
+	height: 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar__menu-container {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.navbar__menu-container a {
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+
+.navbar__menu-container .icon-stadium-info {
+	margin: 0;
+	list-style: none;
+}
+
+.navbar__menu-container .icon-mypage {
+	width: 28px;
+	height: 28px;
+	margin: 0;
+	list-style: none;
+}
+
+/* 배너 */
+.banner-container {
+	width: 100%;
+	background-color: var(--bn-background-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.banner {
+	max-width: var(--content-width);
+	width: 90%;
+	height: calc(100% - 40px);
+	border-radius: 10px;
+	background-position: center;
+	background-size: cover;
+}
+
+/* 내용 */
+.content-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content__main {
+	max-width: var(--content-width);
+	width: 90%;
+	height: auto;
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	/* background-color: aqua; */
+	/* border-radius: 10px;
+	box-shadow:	1px 2px 3px 1px rgb(203, 203, 203); */
+}
+
+/********************** 개별 **********************/
+
+/* banner-container */
+.banner-container-type1 {
+	height: var(--bn-size-type2);
+}
+
+
+/* content */
+.content__main__startform {
+	width: 100%;
+	height: 100%;
+}
+
+.content__main__title {
+	width: fit-content;
+	margin: 40px 0 20px;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.content__main__title > span {
+	border-bottom: 1.5px solid;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 22px;
+}
+
+.startform__submit-container {
+	width: 100%;
+	position: relative;
+	margin: 90px 0;
+}
+
+.startform__submit-container > button {
+	position: absolute;
+	width: 560px;
+	height: 70px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 20px;
+	background-color: black;
+	font-size: 20px;
+	color: white;
+	cursor: pointer;
+}
+
+/* 캐러셀 공통 */
+.carousel-wrap {
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+	position: relative;
+}
+
+.owl-carousel .item {
+	position: relative;
+	z-index: 100;
+	-webkit-backface-visibility: hidden;
+}
+
+/* end fix */
+.owl-nav > button {
+	margin-top: -24px;
+	position: absolute;
+	top: 50%;
+	/* color: #cdcbcd; */
+}
+
+.owl-nav svg {
+	width: 28px;
+	height: 28px;
+	/* font-size: 52px; */
+}
+
+.owl-nav .owl-prev {
+	left: -44px;
+}
+
+.owl-nav .owl-next {
+	right: -44px;
+}
+
+/*****************/
+
+.owl-carousel p {
+	position: relative;
+	width: 100%;
+	height: 44px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.owl-carousel-day .carousel-weather-container {
+	height: 100px;
+	margin: 10px;
+}
+
+.owl-carousel label,
+.other-condition-container label {
+	width: 100%;
+	height: 100%;
+	border: none;
+	border-radius: 45px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.owl-carousel-day label {
+	border-radius: 16px;
+}
+
+.other-condition-container label{
+	border-radius: 10px;
+}
+
+.owl-carousel input[type="radio"],
+.other-condition-container input[type="radio"] {
+	display: none;
+}
+
+.owl-carousel input:checked+label,
+.other-condition-container input:checked+label {
+	background-color: black;
+	color: white;
+}
+
+.owl-carousel-day input:checked+label {
+	background-color: #EFF1FF;
+	color: black;
+}
+
+.owl-carousel-day .weather-label-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 85%;
+}
+
+.weather-label-container .weather-label-left-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.weather-label-container .weather-label-left-container > p {
+	margin: 0;
+	width: fit-content;
+	height: fit-content;
+}
+
+.weather-label-container .weather-label-left-container > p:nth-child(1) {
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+	margin-bottom: 10px;
+}
+.weather-label-container .weather-label-left-container > p:nth-child(2) {
+	font-size: 17px;
+	font-weight: bold;
+	color: #23226B;
+}
+.weather-label-container .weather-label-left-container > p:nth-child(3) {
+	font-size: 12px;
+	color: #FFB32C;
+}
+
+.weather-label-container .weather-label-right-container {
+	width: 80px;
+	height: 80px;
+	background-position: center;
+	background-size: cover;
+}
+
+/* 추가 조건 선택 */
+.other-condition-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.other-condition-container {
+	display: flex;
+	align-items: center;
+	width: 450px;
+	gap: 35px;
+
+}
+
+.other-condition-ontainer-title{
+	font-size: 17px;
+	color: #848484;
+	font-weight: bold;
+}
+
+.other-condition-btn-container {
+	display: flex;
+	gap: 10px;
+}
+
+.other-condition-btn-container .item {
+	width: 90px;
+	height: 44px;
+	margin: 0;
+}
+
+.other-condition-btn-container p {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* 모달 */
+dialog {
+	max-width: 550px;
+	width: 90%;
+	height: 90%;
+	border: none;
+	border-radius: 15px;
+}
+
+.dialog-type1 {
+	max-height: 250px;
+}
+
+.dialog-type2 {
+	max-height: 300px;
+}
+
+.dialog-content-container {
+	width: 90%;
+	height: calc(100% - 60px);
+	margin: auto;
+	overflow: hidden;
+}
+
+.dialog-button-container {
+	width: 100%;
+	height: 40px;
+	margin: 0 auto 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}
+
+.dialog-button-container > button {
+	width: 100px;
+	height: 100%;
+	border: 1px solid #bab8bd;
+	border-radius: 10px;
+	background-color: #fff;
+	color: rgb(80, 80, 80);
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.dialog-button-container > button:hover {
+	background-color: #101010;
+	color: #ffffff;
+}
+
+.info-error-dialog .dialog-content-message,
+.info-confirm-dialog .dialog-content-message {
+	width: 100%;
+	height: 100%;
+	font-size: 20px;
+	font-weight: bold;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.info-error-dialog .dialog-content-message > svg,
+.info-confirm-dialog .dialog-content-message > svg {
+	width: 50%;
+	height: 50%;
+}
+
+.info-error-dialog .dialog-content-message > p,
+.info-confirm-dialog .dialog-content-message > p {
+	font-size: 17px;
+	color: #383838;
+	margin: 20px 0;
+}
+.dialogo-content-select-codition {
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #3535e9;
+}
+
+.dialogo-content-select-codition p {
+	font-size: 14px;
+	margin: 5px 0;
+}

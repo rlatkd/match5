@@ -1,0 +1,5 @@
+auth:
+  kakao:
+    rest-api-key: ENC(32SqbiAoL2oIXqNGpm+Ko6Pd3co95vC3EYU5cwBM9parPN42QkNwP70xqucGblD+)
+    #redirect-uri: ENC(hfqYX/v8jTlw3D6FK8OPOPUSiG5NosZavqcl/9C1Jx/r5DdkDCFny8wBycZ32fXy4TQioo+avHwosiBZDSkn0eOc14XFEiuH5ATfO5RoXT/AocipwjisaA==)
+    redirect-uri: ENC(nTxs1yFSq0fQLPJp1Jiqw4+oRlmfgPWBUMQYkGgfmxsS/sZEMZBx+g==)

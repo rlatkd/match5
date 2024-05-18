@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--위에는 mapper xml 기본문법 -->
+
+<mapper namespace="site.match5.domain.match.repository.MatchingReserveMapper">
+    <!--    매칭 예약 프로시저-->
+    <insert id="matchingReserve" parameterType="java.util.HashMap" statementType="CALLABLE">
+        {call reserve_court
+              (
+                #{v_location, mode=IN, jdbcType=VARCHAR },
+                #{v_selected_date, mode=IN, jdbcType=TIMESTAMP },
+                #{v_selected_time, mode=IN, jdbcType=VARCHAR },
+                #{v_home_manager_id, mode=IN, jdbcType=INTEGER },
+                #{v_away_manager_id, mode=IN, jdbcType=INTEGER },
+                #{success_row, mode=OUT, jdbcType=INTEGER },
+                #{matching_history_id, mode=OUT, jdbcType=INTEGER }
+              )
+            }
+    </insert>
+
+
+<!--    매칭된 인원들 매칭큐에서 삭제-->
+    <delete id="deleteMatchedUserFromQ">
+        delete from MATCHING_QUEUE where USER_ID in
+        <foreach collection="userIdList" item="userId" separator="," open="(" close=")">
+            #{userId}
+        </foreach>
+    </delete>
+
+</mapper>

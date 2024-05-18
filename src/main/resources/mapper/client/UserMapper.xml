@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--위에는 mapper xml 기본문법 -->
+<mapper namespace="site.match5.domain.client.repository.UserMapper">
+    <update id="updateLevelExp">
+        update CLIENT
+        set CURRENT_EXP = CURRENT_EXP + #{updateExpReq.exp}
+        where id = #{userId}
+    </update>
+
+
+    <update id="updatePointExp">
+        update CLIENT
+        set POINT = POINT + #{updatePointReq.point}
+        where id = #{userId}
+    </update>
+
+    <update id="updateMoneyExp">
+        update CLIENT
+        set CHARGE_AMOUNT = CHARGE_AMOUNT + #{updateMoneyReq.money}
+        where id = #{userId}
+    </update>
+
+    <select id="findClient" resultType="Client">
+        select id as id,
+               level_id as levelId,
+               gender,
+               age,
+               nickname as nickname,
+               kakao_id as kakaoId,
+               current_exp as currentExp,
+               charge_amount as money,
+               point,
+               created_at as createdAt,
+               updated_at as updatedAt,
+               image_url as imageUrl,
+               match_count as matchCount
+        from client
+        where id = #{userId}
+    </select>
+
+</mapper>

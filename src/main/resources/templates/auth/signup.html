@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATCH5</title>
+    <link rel="stylesheet" href="/css/auth/signup.style.css">
+    <script src="/js/auth/signup.js" defer></script>
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <a href="/">
+            <img src="/images/logo.png" alt="">
+        </a>
+        <div class="navbar__menu-container">
+        </div>
+    </nav>
+</header>
+
+<main class="mypage-info">
+    <section class="content-container">
+        <h3>닉네임</h3>
+
+        <div class="content-div-nickName">
+            <label for="nickName"></label>
+            <input type="text" id="nickName" name="nickName"
+                   placeholder="&nbsp;&nbsp;닉네임을 입력해주세요. (최대 00글자)" /><br />
+        </div>
+
+
+
+        <h3>성별</h3>
+        <div class="content-div-gender">
+            <label for="gender"></label>
+            <select id="gender" name="gender">
+                <option value="" disabled selected hidden>&nbsp;&nbsp;선택</option>
+                <option value="male">&nbsp;&nbsp;남자</option>
+                <option value="female">&nbsp;&nbsp;여자</option>
+            </select>
+        </div>
+
+
+        <h3>나이</h3>
+        <div class="content-div-age">
+            <label for="age"></label>
+            <select id="age" name="age">
+                <option value="" disabled selected hidden>&nbsp;&nbsp;선택</option>
+                <option th:each="i : ${#numbers.sequence(0, 99)}" th:value="${i}" th:text="'&nbsp;&nbsp;' + ${i}"></option>
+            </select>
+        </div>
+
+        <h3>자가 실력 진단</h3>
+        <div class="level-div">
+            <div class="level-button-div">
+                <button id="level1">
+                    <img src="/images/signuplevel/1.png">
+                    <br>
+                    풋살을 한 경험<br>이 거의 없어요</button>
+            </div>
+            <div class="level-button-div">
+                <button id="level2">
+                    <img src="/images/signuplevel/2.png">
+                    <br>
+                    가끔 친구들과 <br>풋살을 즐겨요</button>
+            </div>
+            <div class="level-button-div">
+                <button id="level3">
+                    <img src="/images/signuplevel/3.png">
+                    <br>
+                    자주 풋살을<br>즐기며 꾸준히 연습중이에요</button>
+            </div>
+            <div class="level-button-div">
+                <button id="level4">
+                    <img src="/images/signuplevel/4.png">
+                    <br>
+                    풋살 대회나<br>리그에 참가한 경험이 있어요</button>
+            </div>
+            <div class="level-button-div-last">
+                <button id="level5">
+                    <img src="/images/signuplevel/5.png">
+                    <br>
+                    축구 또는 풋살 선수출신이에요</button>
+            </div>
+        </div>
+
+        <div class="signup-button-div">
+            <button id="signup-button">
+                회원가입
+            </button>
+        </div>
+
+
+    </section>
+</main>
+
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+spring:
+  profiles:
+    active: prod # 현재 실행하는 profile 은  local 로 설정 , 개발완료후 prod 로 바꾸면 될듯하다.
+    group: # 그룹화를 이용하여 로컬에서 테스트 데이터베이스와 prod(실제 서비스) 데이터베이스를 나눈다.
+      local: # local profile 에
+        - db-local # db-local 를 그룹화한다. ( 같이 실행되는 설정파일)
+      prod: # prod profile 에
+        - db-prod # db-prod 를 그룹화한다. ( 같이 실행되는 설정파일)
+    include: # 어떤 profile 이든 실행되는 설정파일 지정
+      - db # 기본설정이 담겨있다.
+      - private #카카오 설정 private 키값
+      - auth
+      - s3
+  task:
+    scheduling:
+      auto
+
+
+
+
+
+## @Value 에서 사용되는 변수 설정은 아래에서
+#  config: #카카오 access 환경변수
+#    import: optional:file:./application-auth.yml
+
+#AWS S3
+cloud:
+  aws:
+    s3:
+      bucket: match5rlatkd
+    credentials:
+      access-key: ENC(yoKilWN4cgqZVPELJJWz6fqsOPCRC57b1Bq5l6J/W88=)
+      secret-key: ENC(eZ09DOYEN6d4ekIiMVJA+qbeYBhZKUjTF3lRT6OJxLLNVhn6Qlzorezey75iIQiUrVCQqn8j0kI=)
+      instance-profile: true
+    region:
+      static: ap-northeast-2
+      auto: false
+    stack:
+      auto: false
+
+
+## 배포용 테스트
+jasypt:
+  encryptor:
+    password: oracleproject2
+

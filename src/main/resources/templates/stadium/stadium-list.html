@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATCH5</title>
+
+    <link rel="stylesheet" href="/css/stadium/stadium-list.css">
+    <link rel="stylesheet" href="/css/stadium/navbar_banner_style.css">
+    <link rel="stylesheet" href="/css/stadium/map.css">
+    <link rel="stylesheet" href="/css/stadium/customoverlay.css">
+    <!----------- 알림을 위한 공통 태그 START ----------->
+    <link rel="stylesheet" type="text/css" href="/css/notification.css"> <!-- 알림 CSS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script><!-- 알림 JS -->
+    <script src="/js/alarm.js" defer></script><!-- 알림 JS -->
+    <script src="/js/notification-modal.js" defer></script><!-- 알림 JS -->
+    <!----------- 알람을 위한 공통 태그 END ----------->
+    <script src="/js/stadium/stadium-list.js" defer></script>
+    <script src="/js/stadium/map.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <a href="/">
+            <img src="/images/logo.png" alt="">
+        </a>
+
+        <div class="navbar__menu-container">
+            <a href="/stadium-list">
+                <img src="/images/icons/icon-stadium-info.svg" alt="" class="icon-stadium-info">
+            </a>
+            <a href="/mypage">
+                <img src="/images/icons/icon-mypage.svg" alt="" class="icon-mypage">
+            </a>
+        </div>
+    </nav>
+</header>
+
+<main class="main">
+    <section class="banner-container banner-container-type1">
+        <img src="/images/banner/startBanner.png" alt="" class="banner">
+    </section>
+
+    <section class="content-container">
+        <div class="content-header">
+            <div class="ii">풋살장 리스트</div>
+            <div class="menu">
+                <div class="menu_left">
+                    <span class="region-filter-text">전체</span>
+                    <span id="stadium-count-number">&nbsp;12</span>
+                    <span class="stadium-count-text">개의 풋살장</span>
+                </div>
+                <div class="menu_right">
+                    <button type="button" id="select-region-button"><img id="select-region-button-image" src="../images/stadium/select-region-button.png">지역 선택</button>
+                    <button type="button" id="map-mode-button"><img id="map-mode-button-image" src="../images/stadium/map-mode-button.png">지도로 보기</button>
+                </div>
+            </div>
+        </div>
+        <div class="content__main">
+            <div class="review-list-container">
+                <!--동적으로 채워질 예정-->
+                <div class="item">
+                    <div class="index"></div>
+                    <div class="stadium_name"></div>
+                    <div class="location"></div>
+                </div>
+                <div class="item">
+                    <div class="index"></div>
+                    <div class="stadium_name"></div>
+                    <div class="location"></div>
+                </div>
+                <div class="item">
+                    <div class="index"></div>
+                    <div class="stadium_name"></div>
+                    <div class="location"></div>
+                </div>
+                <div class="item">
+                    <div class="index"></div>
+                    <div class="stadium_name"></div>
+                    <div class="location"></div>
+                </div>
+                <div class="item">
+                    <div class="index"></div>
+                    <div class="stadium_name"></div>
+                    <div class="location"></div>
+                </div>
+            </div> <!--review-list-container-->
+            <!--페이징 처리-->
+            <div class="pagination">
+                <button class="prev-btn"><img src="../images/stadium/prev-button.png"></button>
+                <div class="page-buttons">
+
+
+
+                    <!--동적으로-->
+
+                        <button class="active">1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                        <button>5</button>
+
+                </div>
+                <button class="next-btn"><img src="../images/stadium/next-button.png"></button>
+            </div>
+        </div> <!--content__main-->
+    </section>
+</main>
+<br>
+<!-- 지도 모달 -->
+<div id="mapModal" class="modal">
+    <div class="modal-wrapper"> <!--흰부분-->
+        <!-- 모달 내용 (x버튼 + 지도) -->
+        <div class="close-button-wrapper">
+            <div></div>
+            <img id="closeModal" class="close-button" src="../images/stadium/modal-xbutton.png"/>
+        </div>
+        <div class="modal-content">
+            <div id="map"></div>
+        </div>
+    </div>
+</div>
+<!----------- 알림을 위한 공통 코드 START ----------->
+<!-- 알림 버튼 -->
+<button id="notification-button">
+    <img src="/images/noti_button.png" alt="알림 버튼">
+    <!-- 빨간 동그라미 -->
+    <div id="red-dot"></div>
+</button>
+<!-- 알림 모달 창 -->
+<div id="notification-modal"></div>
+<!----------- 알림을 위한 공통 코드 END ----------->
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <style>
+    /*메인 페이지 css 파일이 생기면 이동할 예정*/
+    .weather-icon {
+        max-width: 35px;
+        height: auto; /* 비율을 유지하면서 크기를 조절 */
+    }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="/css/notification.css"> <!-- 공통 CSS 추가 -->
+    <script src="/js/notification-modal.js"></script> <!-- 공통 자바스크립트 추가 -->
+</head>
+<body>
+<div th:insert="notification.html :: content"></div> <!-- 레이아웃 상속 -->
+    <h1>Weather Forecast</h1>
+    <h2>1일 후</h2>
+    <img th:src="@{${wf1Icon}}" alt="Weather Icon" class="weather-icon" />
+    <span th:text="${wf1}"></span>
+    <span th:text="${tmn1 + ' / ' + tmx1}"></span>
+    <h2>2일 후</h2>
+    <img th:src="@{${wf2Icon}}" alt="Weather Icon" class="weather-icon" />
+    <span th:text="${wf2}"></span>
+    <span th:text="${tmn2 + ' / ' + tmx2}"></span>
+    <h2>3일 후</h2>
+    <img th:src="@{${wf3Icon}}" alt="Weather Icon" class="weather-icon" />
+    <span th:text="${wf3Pm}"></span>
+
+    <span th:text="${taMin3 + ' / ' + taMax3}"></span>
+
+    <h2>4일 후</h2>
+    <img th:src="@{${wf4Icon}}" alt="Weather Icon" class="weather-icon" />
+    <span th:text="${wf4Pm}"></span>
+
+    <span th:text="${taMin4 + ' / ' + taMax4}"></span>
+
+    <h2>5일 후</h2>
+    <img th:src="@{${wf5Icon}}" alt="Weather Icon" class="weather-icon" />
+    <span th:text="${wf5Pm}"></span>
+
+    <span th:text="${taMin5 + ' / ' + taMax5}"></span>
+
+    <h2>6일 후</h2>
+    <img th:src="@{${wf6Icon}}" alt="Weather Icon" class="weather-icon" />
+    <span th:text="${wf6Pm}"></span>
+
+    <span th:text="${taMin6 + ' / ' + taMax6}"></span>
+
+    <h2>7일 후</h2>
+    <img th:src="@{${wf7Icon}}" alt="Weather Icon" class="weather-icon" />
+    <span th:text="${wf7Pm}"></span>
+
+    <span th:text="${taMin7 + ' / ' + taMax7}"></span>
+
+</body>
+</html>

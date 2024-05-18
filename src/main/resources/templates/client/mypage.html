@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATCH5</title>
+    <link rel="stylesheet" href="/css/mypage.style.css">
+    <!----------- 알림을 위한 공통 태그 START ----------->
+    <link rel="stylesheet" type="text/css" href="/css/notification.css"> <!-- 알림 CSS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script><!-- 알림 JS -->
+    <script src="/js/alarm.js" defer></script><!-- 알림 JS -->
+    <script src="/js/notification-modal.js" defer></script><!-- 알림 JS -->
+    <!----------- 알람을 위한 공통 태그 END ----------->
+    <script src="/js/client/mypage.js" defer></script>
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <a href="/">
+            <img src="/images/logo.png" alt="">
+        </a>
+        <div class="navbar__menu-container">
+            <a href="/stadium-list">
+                <img src="/images/icons/icon-stadium-info.svg" alt="" class="icon-stadium-info">
+            </a>
+            <a href="/mypage">
+                <img src="/images/icons/icon-mypage.svg" alt="" class="icon-mypage">
+            </a>
+        </div>
+    </nav>
+</header>
+
+
+
+
+<main class="mypage-info">
+    <section class="content-container">
+        <div class="content__main">
+            <div class="content__main__left">
+
+
+                <div class="my-top-section">
+                    <div class="image-name">
+
+                        <div class="image-circle">
+
+
+
+                            <label for="file-input">
+                                <img src="" id="profile-image" alt="프로필 이미지">
+                            </label>
+                            <input type="file" id="file-input" accept="image/*">
+
+
+
+
+                                <p class="regist-image">이미지 등록</p>
+                            </div>
+                        </div>
+
+
+                        <div class="name">
+                            <h1><span id="nickname"></span></h1>
+                            <div class="agegender"><p><span id="age"></span>세 / <span id="gender"></span></p></div>
+
+                        </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="my-bottom-section">
+                    <div class="level-exp">
+
+                        <div class="level">
+                            <p>레벨</p>
+                            <span id="level-id"></span>
+                        </div>
+
+                        <div class="exp">
+                            <p>경험치</p>
+                            <span id="current-exp"></span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="box">
+                        <p>경기 횟수</p>
+
+                        <div class="ll">
+                            <span id="match-count"></span><p>&nbsp;회</p>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="box">
+                        <p>나의 캐시</p>
+
+                        <div class="ll">
+                            <span id="charge-amount"></span><p>&nbsp;원</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="box">
+                        <p>포인트</p>
+
+                        <div class="ll">
+                            <span id="point"></span><p>&nbsp;p</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="content__main__right">
+                <h1>
+                    나의 MATCH5
+                </h1>
+                <div>
+                    <div class="mypage-menu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="/images/mypage/court.svg">
+                        <button class="my-matching-history-list">
+                            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내 매칭이력</h3>
+                        </button>
+
+                    </div>
+                    <div class="mypage-menu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="/images/mypage/review.svg">
+                        <button class="my-court-review-list">
+                            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내 구장 후기</h3>
+                        </button>
+                    </div>
+                    <div class="mypage-menu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="/images/mypage/cash.svg">
+                        <button class="cash-charge">
+                            <h3>&nbsp;&nbsp;&nbsp;캐시 충전</h3>
+                        </button>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+        </div>
+    </section>
+</main>
+<!----------- 알림을 위한 공통 코드 START ----------->
+<!-- 알림 버튼 -->
+<button id="notification-button">
+    <img src="/images/noti_button.png" alt="알림 버튼">
+    <!-- 빨간 동그라미 -->
+    <div id="red-dot"></div>
+</button>
+<!-- 알림 모달 창 -->
+<div id="notification-modal"></div>
+<!----------- 알림을 위한 공통 코드 END ----------->
+
+</body>
+
+</html>

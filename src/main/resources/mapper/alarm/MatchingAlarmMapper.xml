@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--위에는 mapper xml 기본문법 -->
+
+<mapper namespace="site.match5.domain.alarm.repository.MatchingAlarmMapper">
+    <insert id="saveMatchingAlarm" >
+        insert all
+        <foreach collection="userIdList" item="userId"  >
+            into MATCHING_ALARM(USER_ID, CONTENT, MATCHING_HISTORY_ID, TYPE)
+            VALUES(#{userId},'매칭이 잡혔습니다. 알림을 클릭해서 매칭정보를 확인하세요',#{matchingHistoryId},'매칭완료')
+        </foreach>
+        select * from dual
+    </insert>
+
+    <select id="getAllAlarmByUserId" resultType="AlarmRes">
+        select id, user_id, content, status, created_at, matching_history_id, type
+        from MATCHING_ALARM
+        where USER_ID = #{userId}
+    </select>
+
+
+
+</mapper>

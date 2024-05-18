@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
+:root {
+	/* Size */
+	--bn-size-type1: 340px;
+	--content-width: 1140px;
+
+	/* Border */
+	--container-boarder-radius: 10px;
+
+	/* color */
+	--bn-background-color: rgb(220, 222, 225, 0.35);
+	--container-box-shadow: 1px 2px 3px 1px rgb(203, 203, 203);
+}
+
+body {
+	width: 100dvw;
+	height: 100dvh;
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	position: relative;
+	width: 100%;
+	height: 72px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* 공통 navbar */
+.navbar {
+	max-width: var(--content-width);
+	width: 90%;
+	height: 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar__menu-container {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.navbar__menu-container a {
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+
+.navbar__menu-container .icon-stadium-info {
+	margin: 0;
+	list-style: none;
+}
+
+.navbar__menu-container .icon-mypage {
+	width: 28px;
+	height: 28px;
+	margin: 0;
+	list-style: none;
+}
+
+/* 공통 banner-container */
+.banner-container {
+	width: 100%;
+	background-color: var(--bn-background-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* 개별 banner-container */
+.banner-container-type1 {
+	height: var(--bn-size-type1);
+}
+
+/* 배너 케러셀 */
+.carousel-wrap {
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.carousel-wrap .owl-carousel {
+	width: 100%;
+	height: 100%;
+}
+
+.owl-carousel .item {
+	position: relative;
+	max-width: var(--content-width);
+	width: 90%;
+	height: calc(var(--bn-size-type1) - 40px);
+	margin:20px auto;
+	z-index: 100;
+	-webkit-backface-visibility: hidden;
+}
+
+.banner {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	background-position: center;
+	background-size: cover;
+}
+
+/* 공통 content-container */
+.content-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content__main {
+	max-width: var(--content-width);
+	width: 90%;
+	height: 450px;
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	border-radius: var(--container-boarder-radius);
+	box-shadow: var(--container-box-shadow);
+}
+
+.content__main__left {
+	height: 100%;
+	/* opacity: 0.6; */
+}
+
+.content__main__left>svg {
+	height: 100%;
+	width: calc(var(--content-width) *0.6);
+	/* width: min-content; */
+	position: relative;
+}
+
+.content__main__right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: end;
+	gap: 80px;
+
+}
+
+/* 메인 문구 */
+.main-phrase {
+	font-size: 38px;
+	font-weight: bold;
+	text-decoration: underline;
+	text-decoration-thickness: 3px;
+	margin-right: 10%;
+}
+
+.main-phrase>p {
+	text-align: right;
+	margin: 15px;
+	padding: 0;
+}
+
+
+/* 알림 모달 시작 --------------------------*/
+.notification-container {
+	position: fixed;
+	width: fit-content;
+	height: fit-content;
+	bottom: 30px;
+	right: 30px;
+}
+
+.notification-container img {
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.notification-container img:hover {
+	transform: scale(1.1);
+}
+
+.notification-modal {
+	position: fixed;
+	display: none;
+	bottom: 150px;
+	right: 30px;
+	width: 400px;
+	max-height: 350px;
+	height: fit-content;
+
+	background: rgba(255, 255, 255, 0.35);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(4.5px);
+	-webkit-backdrop-filter: blur(4.5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	overflow: auto;
+}
+
+.notification-modal::-webkit-scrollbar {
+	width: 10px;
+}
+
+.notification-modal::-webkit-scrollbar-thumb {
+	background-color: #b9babb;
+	border-radius: 10px;
+	background-clip: padding-box;
+	border: 2px solid transparent;
+}
+
+.notification-modal::-webkit-scrollbar-track {
+	background-color: rgb(215, 212, 236);
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 5px white;
+}
+
+.notification-content {
+	width: 95%;
+	height: 70px;
+	margin: 10px auto;
+	background: rgba( 255, 255, 255, 0.65 );
+	box-shadow: 0 2px 1px 1px rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 10px );
+	-webkit-backdrop-filter: blur( 10px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+	font-size: 14px;
+	font-weight: 400;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+.notification-content:hover {
+	background: rgba(233, 231, 246, 0.65);
+
+}
+
+.notification-content > p {
+	width: 90%;
+	margin: 0 auto;
+	color: #323232;
+	font-weight: bold;
+}
+/* 알림 모달 끝 --------------------------*/
+
+/* match start 버튼 */
+.match-start-btn-container {
+	display: flex;
+	justify-content: center;
+	margin-right: 10%;
+}
+
+.cta {
+	display: flex;
+	padding: 10px 45px;
+	text-decoration: none;
+	font-family: 'Poppins', sans-serif;
+	font-size: 28px;
+	color: white;
+	background: #000000;
+	transition: 1s;
+	box-shadow: 6px 6px 0 black;
+	transform: skewX(-15deg);
+}
+
+.cta:focus {
+	outline: none;
+}
+
+.cta:hover {
+	transition: 0.5s;
+	box-shadow: 10px 10px 0 #FBC638;
+}
+
+.cta span:nth-child(2) {
+	transition: 0.5s;
+	margin-right: 0px;
+}
+
+.cta:hover span:nth-child(2) {
+	transition: 0.5s;
+	margin-right: 45px;
+}
+
+.cta svg {
+	width: 66px;
+	height: 28px;
+}
+
+.cta span {
+	transform: skewX(15deg)
+}
+
+.cta span:nth-child(2) {
+	width: 20px;
+	margin-left: 30px;
+	position: relative;
+	top: 12%;
+}
+
+/********SVG animation**********/
+
+path.one {
+	transition: 0.4s;
+	transform: translateX(-60%);
+}
+
+path.two {
+	transition: 0.5s;
+	transform: translateX(-30%);
+}
+
+.cta:hover path.three {
+	animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover path.one {
+	transform: translateX(0%);
+	animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover path.two {
+	transform: translateX(0%);
+	animation: color_anim 1s infinite 0.4s;
+}
+
+/* SVG animations */
+
+@keyframes color_anim {
+	0% {
+		fill: white;
+	}
+
+	50% {
+		fill: #FBC638;
+	}
+
+	100% {
+		fill: white;
+	}
+}

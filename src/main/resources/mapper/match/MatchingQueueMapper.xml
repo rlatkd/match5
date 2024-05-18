@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--매칭 알고리즘에 필요한 데이터-->
+<mapper namespace="site.match5.domain.match.repository.PrepareDataMapper">
+    <select id="selectAll" resultType="MatchingQueueItem">
+        select m.user_id as userId,
+               to_char(m.selected_date, 'YYYY-MM-DD') as selectedDate,
+               m.selected_time as selectedTime,
+               m.location as location,
+               m.is_manager as isManager,
+               m.is_outdoor as isOutdoor,
+               m.created_at as createdAt,
+               c.gender as gender,
+               c.age as age,
+               c.current_exp as currentExp
+        from matching_queue m
+                 inner join client c
+                            on m.user_id = c.id
+        order by m.created_at
+    </select>
+
+    <select id="selectNewData" resultType="MatchingQueueItem">
+        select m.user_id as userId,
+               to_char(m.selected_date, 'YYYY-MM-DD') as selectedDate,
+               m.selected_time as selectedTime,
+               m.location as location,
+               m.is_manager as isManager,
+               m.is_outdoor as isOutdoor,
+               m.created_at as createdAt,
+               c.gender as gender,
+               c.age as age,
+               c.current_exp as currentExp
+        from matching_queue m
+                 inner join client c
+                            on m.user_id = c.id
+        where m.created_at &gt; #{createdAt}
+        order by m.created_at
+    </select>
+</mapper>

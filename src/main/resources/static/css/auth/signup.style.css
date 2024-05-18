@@ -1,0 +1,345 @@
+:root {
+	--content-width: 1140px;
+
+	/* Border */
+	--container-boarder-radius: 10px;
+
+	/* color */
+	--container-box-shadow: 1px 2px 3px 1px rgb(203, 203, 203);
+	--bn-background-color: rgb(220, 222, 225, 0.35);
+}
+
+body {
+	width: 100dvw;
+	height: 100dvh;
+	margin: 0;
+	/* overflow-x: hidden; */
+}
+
+.header {
+	position: relative;
+	width: 100%;
+	height: 32px;
+	margin: 20px auto;
+	display: flex;
+	justify-content: center;
+}
+
+/* navbar */
+.navbar {
+	max-width: var(--content-width);
+	width: 90%;
+	height: 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar__menu-container {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.navbar__menu-container a {
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+
+.navbar__menu-container .icon-stadium-info {
+	margin: 0;
+	list-style: none;
+}
+
+.navbar__menu-container .icon-mypage {
+	width: 28px;
+	height: 28px;
+	margin: 0;
+	list-style: none;
+}
+
+.mypage-info {
+	max-width: var(--content-width) ;
+	width: 90%;
+	margin: 0 auto;
+}
+
+
+.mypage-info .content__main__left,
+.mypage-info .content__main__right {
+	width: 550px;
+	height: 600px;
+	border-radius: var(--container-boarder-radius);
+	box-shadow: var(--container-box-shadow);
+}
+
+.mypage-info .content__main__left {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.content-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	border-top: 1px solid rgb(203, 203, 203);
+}
+
+.content-container > h3 {
+	width: 900px;
+	margin: 40px auto 20px;
+	/*align-self: flex-start;*/
+	/*margin-left: 680px;*/
+	/*margin-top: 50px;*/
+}
+
+.content-div-nickName {
+	display: flex;
+	align-items: center;
+	width: 900px;
+	height: 50px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	border-radius: var(--container-boarder-radius);
+	box-shadow: var(--container-box-shadow);
+}
+.content-div-nickName:hover {
+	border: 2px solid blue;
+}
+.content-div-gender {
+
+	box-sizing: border-box;
+
+	display: flex;
+	align-items: center;
+	width: 900px;
+	height: 50px;
+	margin: 0 auto;
+
+	border-radius: var(--container-boarder-radius);
+	box-shadow: var(--container-box-shadow);
+}
+
+.content-div-gender:hover {
+	border: 2px solid blue;
+}
+
+.content-div-age {
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	width: 900px;
+	height: 50px;
+	margin: 0 auto;
+
+	border-radius: var(--container-boarder-radius);
+	box-shadow: var(--container-box-shadow);
+}
+
+.content-div-age:hover {
+	border: 2px solid blue;
+}
+
+.level-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 900px;
+	height: 180px;
+	margin: 0 auto;
+
+}
+
+.level-button-div {
+	box-sizing: border-box;
+
+	/*width: 11%;*/
+	width: 130px;
+	margin-right: 5%;
+	height: 100%;
+	border-radius: var(--container-boarder-radius);
+	box-shadow: var(--container-box-shadow);
+}
+
+.level-button-div:hover {
+	border: 2px solid blue;
+}
+
+.level-button-div button {
+	width: 130px;
+	height: 160px;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	padding: 10px;
+	border-radius: inherit;
+	background-color: inherit;
+	font-size: 15px;
+	font-family: inherit;
+	cursor: pointer;
+}
+
+.level-button-div img {
+	width: 80%;
+}
+
+.level-button-div-last {
+	/*width: 11%;*/
+	box-sizing: border-box;
+	width: 130px;
+	height: 100%;
+	border-radius: var(--container-boarder-radius);
+	box-shadow: var(--container-box-shadow);
+}
+
+.level-button-div-last:hover {
+	border: 2px solid blue;
+}
+
+.level-button-div-last button {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	padding: 10px;
+	border-radius: inherit;
+	background-color: inherit;
+	font-size: 15px;
+	font-family: inherit;
+	cursor: pointer;
+}
+
+.level-button-div-last img {
+	width: 80%;
+}
+
+.content-div-nickName input[type="text"] {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	padding: 10px;
+	border-radius: inherit;
+	background-color: inherit;
+	font-size: 20px;
+	font-family: inherit;
+}
+
+.content-div-nickName select {
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	padding: 10px;
+	border-radius: inherit;
+	background-color: inherit;
+	font-size: 20px;
+	font-family: inherit;
+	color: gray;
+}
+
+.content-div-gender input[type="text"] {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	padding: 10px;
+	border-radius: inherit;
+	background-color: inherit;
+	font-size: 20px;
+	font-family: inherit;
+}
+
+.content-div-gender select {
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	padding: 10px;
+	border-radius: inherit;
+	background-color: inherit;
+	font-size: 20px;
+	font-family: inherit;
+	color: gray;
+}
+
+.content-div-age input[type="text"] {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	padding: 10px;
+	border-radius: inherit;
+	background-color: inherit;
+	font-size: 20px;
+	font-family: inherit;
+}
+
+.content-div-age select {
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	padding: 10px;
+	border-radius: inherit;
+	background-color: inherit;
+	font-size: 20px;
+	font-family: inherit;
+	color: gray;
+}
+
+.signup-button-div {
+	margin: 50px auto 0;
+
+	/*margin-top: 50px;*/
+	display: flex;
+	align-items: center;
+	width: 700px;
+	height: 50px;
+	border-radius: 20px;
+	box-shadow: var(--container-box-shadow);
+	background-color: black;
+}
+
+.signup-button-div:hover {
+	background-color: white;
+}
+
+.signup-button-div button {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	padding: 10px;
+	border-radius: inherit;
+	background-color: inherit;
+	font-size: 20px;
+	font-family: inherit;
+	cursor: pointer;
+	color: white;
+}
+
+.signup-button-div button:hover {
+	color: black;
+}
+
+.selected {
+	background-color: #d6def6;
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--위에는 mapper xml 기본문법 -->
+<mapper namespace="site.match5.domain.userReview.repository.UserReviewMapper">
+
+<!--한번에 여러개 유저 리뷰 생성-->
+    <insert id="saveUserReviews" parameterType="java.util.List">
+        INSERT ALL
+        <foreach collection="list" item="item" separator=" ">
+            into USER_REVIEW(from_user, to_user, matching_history_id, review_rate)
+            values (#{item.fromUserId},#{item.toUserId},#{item.matchingHistoryId},#{item.reviewRate})
+        </foreach>
+        SELECT * FROM DUAL
+    </insert>
+
+
+<!--    단일 - 유저 리뷰 생성-->
+
+    <insert id="saveUserReview" parameterType="UserReview">
+        insert into USER_REVIEW (from_user, to_user, matching_history_id, review_rate)
+        values  (#{fromUserId},#{toUserId},#{matchingHistoryId},#{reviewRate})
+    </insert>
+
+
+<!--  평가 된 유저 중 레벨업 되어야하는 유저 업데이트는 트리거로 구현함-->
+
+<!--    유저가 해당 매칭에 대한 리뷰를 했는지 확인 -->
+    <select id="checkUserAlreadyReview" resultType="Integer">
+        select count(*) from USER_REVIEW where MATCHING_HISTORY_ID =#{matchHistoryId} and FROM_USER = #{userId}
+    </select>
+
+
+
+
+</mapper>
+

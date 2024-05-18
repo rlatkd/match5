@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--위에는 mapper xml 기본문법 -->
+
+<mapper namespace="site.match5.domain.courtSchedule.repository.CourtScheduleMapper">
+    <select id="findScheduleByMatching" resultType="CourtSchedule">
+        select cs.*
+        from MATCHING_HISTORY mh
+                 join COURT_SCHEDULE cs on mh.COURT_SCHEDULE_ID = cs.ID
+        where mh.id = #{matchingHistoryId}
+    </select>
+
+    <update id="cancelCourtSchedule" >
+        update COURT_SCHEDULE set IS_RESERVED = 0 where id = #{courtScheduleId}
+    </update>
+</mapper>
