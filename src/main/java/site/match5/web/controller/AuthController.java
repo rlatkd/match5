@@ -17,7 +17,4 @@ public class AuthController {
         return "/auth/auth";
     }
 
-
-
-
 }

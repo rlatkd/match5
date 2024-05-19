@@ -7,7 +7,6 @@ import site.match5.domain.auth.dto.KakaoUrlDto;
 @Service
 public class LoginService {
 
-
     @Value("${auth.kakao.rest-api-key}")
     private String kakaoRestApiKey;
 

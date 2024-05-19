@@ -1,5 +1,3 @@
-
-
 const queryParams = new URLSearchParams(window.location.search);
 const code = queryParams.get("code");
 
@@ -9,9 +7,9 @@ const getAccessToken = async (code) => {
         const res = await fetch("/api/auth/kakao/token", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify({ code })
+            body: JSON.stringify({ code }),
         });
         const token = await res.json();
         return token;
@@ -27,9 +25,9 @@ const getKakaoUserInfo = async (token) => {
         const res = await fetch("/api/auth/kakao/info", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(token)
+            body: JSON.stringify(token),
         });
         const kakaoId = await res.json();
         const authenticatedId = await checkAuthentication(kakaoId);
@@ -50,13 +48,13 @@ const checkAuthentication = async (kakaoId) => {
         const res = await fetch("/api/auth/kakao/check", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(kakaoId)
+            body: JSON.stringify(kakaoId),
         });
         const isClientExist = await res.text();
-        console.log(isClientExist)
-        console.log(typeof(isClientExist))
+        console.log(isClientExist);
+        console.log(typeof isClientExist);
         return isClientExist;
     } catch (err) {
         console.log(err);
@@ -70,9 +68,9 @@ const endAccess = async (token) => {
         const res = await fetch("/api/auth/kakao/close", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(token)
+            body: JSON.stringify(token),
         });
         const msg = await res.text();
     } catch (err) {
@@ -91,7 +89,7 @@ const getAuthentication = async () => {
             window.location.href = "/signup";
         }, 1000);
     } catch (err) {
-        console.log(err)
+        console.log(err);
         throw err;
     }
 };
