@@ -32,7 +32,7 @@
 ## 3. Directory
 
 <details>
-<summary>디렉토리 구조</summary>
+<summary>디렉터리 구조</summary>
 
 ```
 📁 match5
